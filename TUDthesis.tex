@@ -646,7 +646,7 @@ MD domain--------------------End of state of art
 
 \newpage
 \section{Approach}
-In this section, we present approaches used for solving the problem statement mentioned in the introduction part. At first we present the approach for embedding partial services on the physical substrate. All the previous algorithms for multi-operator embedding requires topology and resource information of each underlying operator domains. Knowing operator's topology details or capacity details is very crucial for embedding in multiple domains. Embedding algorithm needs to know minimum details of the participating topologies or resource information for selecting suitable physical resources for every VN request. With all the necessary information about each participating topologies it is easier and less time consuming for an orchestrator to provide accurate embedding solution. \newline 
+In this section, we present approaches used for solving the problem statement mentioned in the introduction part. All the previous algorithms for multi-operator embedding requires topology and resource information of each underlying operator domains. Knowing operator's topology details or capacity details is very crucial for embedding in multiple domains. Embedding algorithm needs to know minimum details of the participating topologies or resource information for selecting suitable physical resources for every VN request. With all the necessary information about each participating topologies it is easier and less time consuming for an orchestrator to provide an accurate embedding solution. \newline
 
 Current approaches provide embedding solutions by assuming every operator exposes their private topology to the orchestrator entity which runs the embedding algorithm. The problem with such solutions is that in the real world, operators may not want to expose their topology details to any other operators. Many operators are reluctant to share their internal working topology, even in the abstracted form, as the topology details are paramount to to their operational success. The high level topology abstraction, if exposed by the operators, results in inefficient embedding solutions, as the algorithms will fail to calculate anything accurately. With this reluctance of exposing topology details, such solutions are very difficult to implement in the real world.\newline  
 
@@ -657,51 +657,56 @@ Here we propose a solution where operators does not need any information about t
 	\caption{Partial Embedding}
 	\label{fig: Partial_Embedding}
 \end{figure}
-Consider a scenario depicted in the figure \ref{fig: Partial_Embedding} where the physical domains are abstracted as nodes. In the figure node A represents operators own node which receives virtual network requests from the customer. The main idea of this work is that the operator that receives the request (operator A) must  divide the service request into a part that can be hosted by the operator himself and another that might be hosted by other  operators. The part that cannot be hosted by the operator is exposed in an external database to which other operators can subscribe. Other operators may then internally evaluate if it can support this partial request. If they can then a negotiation procedure may take place to support the entire request. This way none of the operators need to expose their topologies to each other.\newline
 
-To do this, we model an MILP for operator A considering
-another operator's topology as a pseudo node with infinite
-resource. In such scenario,
-operator A considers other nodes as infinite nodes that can
-host any number of VNs because they have infinite physical
-resources. Based on such a model and the knowledge of cost
-of hosting the other operators, our MILP can try to minimize
-the total cost of hosting the service over this entire modelled
-graph. The solution to the MILP results in a proposition of
-the parts of the VN that need to be placed in Operators A’s
-network and the parts that cannot be hosted by operator A.
-The latter part may then be exposed to other operators for
-evaluation. Therefore instead of exposing individual topology
-details, operator A exposes the partial VN request. With this
-approach, operators need not to expose their topology details to others.  
+Consider a scenario depicted in the figure .\ref{fig: Partial_Embedding} where the physical domains are abstracted as nodes. In the figure node A represents operators own node which receives virtual network requests from the customer. The main idea of this work is that the operator that receives the request (operator A) must  divide the service request into a part that can be hosted by the operator himself and another that might be hosted by other  operators. The part that cannot be hosted by the operator is exposed in an external database to which other operators can subscribe. Other operators may then internally evaluate if it can support this partial request. If they can then a negotiation procedure may take place to support the entire request. This way none of the operators need to expose their topologies to each other.\newline
 
-To support the scenario and the architecture presented here an ILP capable of calculating partial embedding
-solutions is required. This section firstly presents the
-basic embedding ILP formulation that we presented earlier
-in \cite{vneapproach}. Following the basic ILP formulation we present the
-modifications to the algorithm that help to calculate partial
-embeddings without knowing the details of the other domains.
+As we mentioned earlier, orchestrator should be able to calculate the part of VN request it can serve. The partially non-embedded part of the request may then be sent to an external database which can be accessed by other operators. The other operators can periodically check this database to see whether they can satisfy the request partially or completely. Some cases the external database may belong to third party broker. The following section provides brief picture on the system required to achieve the above mentioned goals. For this we define important components that are essential for every domains participating in the embedding process. The figure (fig .\ref{orch}) represents an orchestrator that is responsible for managing and serving incoming VN requests. \newline
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm, height=8cm]{orch.jpg}
+	\caption{Orchestrator A}
+	\label{orch}
+\end{figure}
+
+The orchestrator has these main components:
+
+\begin{enumerate}
+\item  Service Request Manger (SRM): The SRM is responsible for calculating the partial request that it's own domain can fulfil with the help of embedding algorithm. SRM receives VN request and feed it to the 'embedding algorithm'. The algorithm performs mapping based on the objective function defined by the operator.
+	
+\item Pending Request Manager (PRM): This component receives either a part of VN request that failed in embedding or a whole VN request that failed to embed. In case of failed part of VN, PRM stores failed partial VN request into database. The PRM can be configured to apply some abstraction rules to the separated VN request (partial non-embedded request) received from SRM. 
+
+\item Databases: Orchestrator maintains two databases. The first database stores partial VN that succeeded in the local embedding and second stores failed partial VN for further processing. These two databases are crucial for complete embedding of a VN request as they together contain complete details of a VN request.	
+\end{enumerate}
+ 
+Now let us understand the operation of the orchestrator and its components in detail. The following flow charts(fig .\ref{fl}) explains how an VN request is embedded by sharing its parts between different domains. Consider two orchestrating entities Orchestrator A and Orchestrator B participating in the embedding process. The SRM component of the orchestrator A receives a VN request. The embedding algorithm is applied to this VN request to check whether local embedding is possible, i.e whether the VN can be embedded completely on the orchestrator domain A. If local embedding is possible then embedding is considered successful and orchestrator starts processing the next VN request. In case of failed local embedding, SRM with the help of the algorithm, separates the VN request into partial VN requests. The partial VN request may be part of VN request that failed to embed locally or the whole VN request that also failed to embed locally. In both the cases, partial requests are sent to the pending request manager (PRM) of that orchestrator.
+
+The PRM component of an orchestrator saves the non-embedded part of VN request into a database which can be accessed by other operators. In order to notify other operators about the saved partial VN, orchestrator can implement a publish/subscribe system or a request crawler which periodically checks other orchestrator's PRM for new partial VN offers. Once the orchestrator B come to know about the partial VN offers, it contacts administrator of the orchestrator A with the corresponding partial VN details. If both orchestrator negotiates on embedding the partial VN request then SRM of orch. B receives the partial VN request. \newline
+
+After receiving the partial VN request from orch. A, now its orch. B's turn to decide whether it can support the received VN request or not. This is done by running the algorithm in orch. B. If orch. B fails to embed the VN request completely, then the embedding is considered as failure and notified to the orch. A. In this case orch. B now starts looking for new partial VNs. If in case orch. B is able to embed the received partial VN completely then the orch. A is contacted saying the VN request can be embedded completely. Now orc. B has to wait until orch. A agrees for complete embedding. If agreement is reached then embedding procedure is continued in both orchestrator for that VN request, if not orch. B stops serving this request an look for new one.\newline   
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth, height=11cm]{flowchart1.png}
+	\caption{Operations in detail}
+	\label{fl}
+\end{figure}
+
+
+
+
+
+Now we have an overview of embedding process with the help of orchestrator components and pub-sub system. To achieve  
+
 
 
 ************************************Show animation of overall process of my thesis (3 pages) explaining all the 3 requirements in detail****************************
-
+\newpage
 \subsection{Requirement I: Partial Embedding}
+At first we present the approach for embedding partial services on the physical substrate. To do this, we model an MILP for operator A considering
+another operator's topology as a pseudo node with infinite resource. In such scenario, operator A considers other nodes as infinite nodes that can host any number of VNs because they have infinite physical resources. Based on such a model and the knowledge of cost of hosting the other operators, our MILP can try to minimize the total cost of hosting the service over this entire modelled graph. The solution to the MILP results in a proposition of the parts of the VN that need to be placed in Operators A’s network and the parts that cannot be hosted by operator A. The latter part may then be exposed to other operators for evaluation. Therefore instead of exposing individual topology details, operator A exposes the partial VN request. With this approach, operators need not to expose their topology details to others. \newline
 
-This Section provides the solution on how to divide VN
-request in to parts that are mapped to operators own node
-and other infinite nodes. We present an ILP formulation
-that enables the operator to calculate parts of the graph
-that it can host in its own topology and the part that needs
-to be pushed to external databases. We name this kind of embedding a VN partially in different domains as "Partial Embedding". We present two albeit
-related approaches in the following subsections: i) the domain
-representation where the operators own domain is abstracted
-ii) where the operators own domain is not abstracted. The
-general concept of the solution is the abstraction of each
-domain to infinite nodes, where in all requests can succeed.
-However, hosting a request in that infinite node incurs an
-additional cost factor of $\mu_{d}$ where 'd' is the index of the
-domain the infinite node represents. The objective then is to
-minimize the cost. \newline
+This Section provides the solution on how to divide VN request in to parts that are mapped to operators own node and other infinite nodes. We present an ILP formulation that enables the operator to calculate parts of the graph that it can host in its own topology and the part that cannot be served by itself. We name this kind of embedding a VN partially in different domains as "Partial Embedding". We present two albeit related approaches in the following subsections: i) the domain representation where the operators own domain is abstracted ii) where the operators own domain is not abstracted. The
+general concept of the solution is the abstraction of each domain to infinite nodes, where in all requests can succeed. However, hosting a request in that infinite node incurs an additional cost factor of $\mu_{d}$ where 'd' is the index of the domain the infinite node represents. The objective then is to minimize the cost. \newline
 
 Self Topology Abstraction: As explained earlier, the domain is itself represented as a pseudo-node and the neighbouring nodes are represented as infinite nodes as shown in \ref{fig: Partial_Embedding} For every operator, his own domain is considered as known domain and other domains as infinite domains. The edge nodes of a pseudo node A (known domain) are connected to infinite nodes. These infinite nodes can host everything. The capacity, bandwidth and other resources are infinite so that these nodes can process every requests and host every virtual network. Embedding virtual request on known node (operator A) incurs cost 'w'. Cost of hosting in infinite nodes is $\mu$ times costlier than hosting on our own node. Typically,  $\mu \geq 1$ but this is not necessary. \newline
 
@@ -873,7 +878,7 @@ The cost factors explained in the goal function Eq .\ref{part_enb_goal} can be s
 		\hline
 	\end{tabular}
 \end{table}
-The values for the corresponding cost factors used in the experiment is tabulated below (Table \ref{cost_table}). The input textboxes in the GUI corresponds to the rows in the table. For the price '$p_{g}$', value is assigned while generating VN request graph. For $\beta$ and $\gamma$ value is assigned for in the code. Total number of pseudo-nodes, number of nodes inside each pseudo-node and number of nodes in virtual network request can be changed in the simulation code. The dropdown field "Known domains" \text{ in} the GUI accepts multiple input and represents number of known domains. It is possible to select any of the pseudo-nodes in the network. The field "BW Cost-K Domains" \text{ accepts} input for the variable $\mu_{i}^{B}$ (internal link bandwidth cost), but only for selected known nodes. Similarly the field "BW Cost-Inf. Domains" \text{ accepts} input for the variable $\mu_{i}^{B}$ (internal link bandwidth cost), but only for infinite nodes. For the variable $\mu_{i}^{C}$ values in the fields "Compute Cost-K. Domains" \text{ and}  "Compute Cost-Inf. Domains" \text{ are} used for known nodes and infinite nodes respectively. For external links connecting two pseudo-nodes, value from the textbox "Ext-link cost" \text{ is} used. By clicking the run button with all the values assigned, the algorithm starts mapping virtual nodes while displaying visual graphs for physical network and VN request. Simulation also provides visuals of mapping virtual nodes and link on to physical network.\newline
+The values for the corresponding cost factors used in the experiment is tabulated (Table \ref{cost_table}). The input textboxes in the GUI corresponds to the rows in the table. For the price '$p_{g}$', value is assigned while generating VN request graph. For $\beta$ and $\gamma$ value is assigned for in the code. Total number of pseudo-nodes, number of nodes inside each pseudo-node and number of nodes in virtual network request can be changed in the simulation code. The dropdown field "Known domains" \text{ in} the GUI accepts multiple input and represents number of known domains. It is possible to select any of the pseudo-nodes in the network. The field "BW Cost-K Domains" \text{ accepts} input for the variable $\mu_{i}^{B}$ (internal link bandwidth cost), but only for selected known nodes. Similarly the field "BW Cost-Inf. Domains" \text{ accepts} input for the variable $\mu_{i}^{B}$ (internal link bandwidth cost), but only for infinite nodes. For the variable $\mu_{i}^{C}$ values in the fields "Compute Cost-K. Domains" \text{ and}  "Compute Cost-Inf. Domains" \text{ are} used for known nodes and infinite nodes respectively. For external links connecting two pseudo-nodes, value from the textbox "Ext-link cost" \text{ is} used. By clicking the run button with all the values assigned, the algorithm starts mapping virtual nodes while displaying visual graphs for physical network and VN request. Simulation also provides visuals of mapping virtual nodes and link on to physical network.\newline
 
 The figure below (Figure .\ref{Partial_embedding}) depicts embedding process with a VN request containing four virtual nodes with node Ids 13541991, 13541992, 83121213 and 83121214. The right-hand side frame shows embedding of these four virtual nodes on to the physical network containing five different domains (pseudo nodes). For the simulation we have selected one pseudo node as known domain (red/dark coloured rectangle). The known domain (node Id: 3741663) has finite number of resources (CPU:270 units, storage:45 units and memory:12) and belongs to the operator where the algorithm is running. Other pseudo nodes except the node: 3741663 is considered as infinite nodes and the resources are set to high numbers (CPU:100000 units, storage:100000 units and memory:100000). Now in this scenario, the orchestrator inputs the virtual network request by splitting them edge-wise sub-graphs. These sub-graphs are embedded one by one according to the formulation we have presented. In the figure, we can see the result of the algorithm showing, the virtual nodes 83121213 and 83121214 are embedded on the known node (3741663) and two other virtual nodes 13541991, 13541992 are not embedded on the known node. The small rectangular boxes overlapping on bigger rectangles represents virtual nodes that are mapped on to the physical domains.
 
@@ -914,7 +919,7 @@ Similar results are obtained for bandwidth allocation for each virtual link of a
 	\label{BW_alloc}
 \end{figure}
 
-Another graph below (fig .\ref{resr_consumption}) summarizes resource allocation and how the resources are consumed in known nodes for every VN request. This graph is to show the resource status only in known nodes and resource status of infinite nodes are not considered. The graph has four plots with different colours representing type of resource allocated and consumed. The line with blue colour represents CPU allocation in the known nodes. It clearly shows for the first 2-3 VN requests 100\% of resource demand is served by known nodes. With the increase in incoming VN requests, this blue line gradually decreases. The blue line plot is another way of visualising the graph in fig .\ref{cpu_alloc}. The brown line plot represents bandwidth allocated for every VN request. Alike the cpu allocation bandwidth allocation in known nodes also decrease with increase in VN requests. \newline 
+Another graph below (fig .\ref{resr_consumption}) summarizes resource allocation and how the resources are consumed in known nodes for every VN request. This graph is to show the resource status only in known nodes and resource status of infinite nodes are not considered. The graph has four plots with different colours representing type of resource allocated and consumed. The line with blue colour represents CPU allocation in the known nodes. It clearly shows for the first 2-3 VN requests 100\% of resource demand is served by known nodes. With the increase in incoming VN requests, this blue line gradually decreases. The blue line plot is another way of visualising the graph in fig .\ref{cpu_alloc}. The brown line plot represents bandwidth allocated for every VN request. Same as in the CPU allocation, bandwidth allocation in known nodes also decrease with increase in VN requests. \newline 
 
 \begin{figure}[h]
 	\centering
@@ -926,25 +931,9 @@ The remaining two plots represents resource availability in known nodes after se
 \newpage
 \subsection{Requirement II: }
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=10cm, height=6cm]{orch.jpg}
-	\caption{Orchestrator A}
-	\label{fig: Orchestrator A}
-\end{figure}
-
-
-In order to understand the process of splitting VN request among we break down each operator in the figure \ref{fig: Partial_Embedding} into the components as shown in figure \ref{fig: Orchestrator A}.  All the operators that involve in providing their physical resources to VN operators maintain their own orchestrator (\ref{fig: Orchestrator A}).  The main function of such an orchestrator is to process incoming VN requests. The orchestrator consists of following main components. They are:  
-\begin{enumerate}
-	\item  Service Request Manger (SRM): A component which receives VN request and feed it to the ‘embedding algorithm’ that we explained in the last section \ref{part_embed_req1}. The embedding algorithm performs optimal allocation of resources to the VN request. In this process of allocation three cases are possible:  A) the whole VN request is successfully embedded in the operator’s domain B) part of the VN request succeeds in mapping on to the local domain C) the whole request fails in the embedding.  For the first case, embedding is considered successful and orchestrator starts processing the next VN request. For the second case, algorithm results in two dividing VN request into two parts, one that can be locally embedded and one that cannot. We name these parts as partial VN requests. In case 2 and 3, the component ‘Pending Request Manager’ comes into picture.
-	
-	\item Pending Request Manager (PRM): This component receives either a part of VN request that failed in embedding or a whole VN request that failed to embed. In case of failed part of VN, PRM stores failed partial VN request into database. 
-	\item Databases: Orchestrator maintains two databases. First database stores partial VN that succeeded in the local embedding and second stores failed partial VN for further processing. These two databases are crucial for complete embedding of a VN request as they together contain complete details of a VN request.	
-	
-	
-	Pub/sub system as per patent----till next page..
-	after that my work of pub sub with db script, db pics and pub sub notif and all till page 10.
-\end{enumerate}
+Starting from partial vn from algo output- nodes links scenarios (few nodes , all nodes of a request), creating partial VN in vnffg format, inserting in db with db script, db pics. why two tables, 
+Pub/sub system as per patent----till next page..
+after that my work of pub sub and pub sub notif. selecting the peer pip all till page 10.
 
 
 

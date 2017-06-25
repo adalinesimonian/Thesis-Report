@@ -11,5 +11,5 @@
 \contentsline {subsubsection}{\numberline {2.3.3}Edge Wise Node Mapping (EdWiN)}{10}
 \contentsline {subsubsection}{\numberline {2.3.4}Recursive and Hierarchical Embedding}{15}
 \contentsline {section}{\numberline {3}Approach}{21}
-\contentsline {subsection}{\numberline {3.1}Requirement I: Partial Embedding}{22}
-\contentsline {subsection}{\numberline {3.2}Requirement II: }{31}
+\contentsline {subsection}{\numberline {3.1}Requirement I: Partial Embedding}{24}
+\contentsline {subsection}{\numberline {3.2}Requirement II: }{33}

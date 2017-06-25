@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.2)  25 JUN 2017 22:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.2)  26 JUN 2017 03:37
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -1406,146 +1406,168 @@ File: Part_embed.jpg Graphic file (type jpg)
 Package pdftex.def Info: Part_embed.jpg used on input line 656.
 (pdftex.def)             Requested size: 398.33936pt x 170.71579pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--661
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
+
+ []
+
+<orch.jpg, id=113, 345.54094pt x 264.99pt>
+File: orch.jpg Graphic file (type jpg)
+ <use orch.jpg>
+Package pdftex.def Info: orch.jpg used on input line 667.
+(pdftex.def)             Requested size: 284.53171pt x 227.62413pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./Part_embed.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 690--705
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+
+ []
+
+<flowchart1.png, id=118, 775.39688pt x 426.09187pt>
+File: flowchart1.png Graphic file (type png)
+ <use flowchart1.png>
+Package pdftex.def Info: flowchart1.png used on input line 689.
+(pdftex.def)             Requested size: 497.9324pt x 312.99496pt.
+
+[22 <./orch.jpg>] [23 <./flowchart1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 705--707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--707
-
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 753--755
+Underfull \hbox (badness 10000) in paragraph at lines 708--710
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--788
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
 
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 816--817
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 819--821
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 758--760
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 822--823
+Underfull \hbox (badness 10000) in paragraph at lines 791--793
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 821--822
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 825--826
+Underfull \hbox (badness 10000) in paragraph at lines 824--826
 
  []
 
-[24] <sub_topo.jpg, id=126, 456.95718pt x 264.23718pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 827--828
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 830--831
+
+ []
+
+[26] <sub_topo.jpg, id=136, 456.95718pt x 264.23718pt>
 File: sub_topo.jpg Graphic file (type jpg)
  <use sub_topo.jpg>
-Package pdftex.def Info: sub_topo.jpg used on input line 829.
+Package pdftex.def Info: sub_topo.jpg used on input line 834.
 (pdftex.def)             Requested size: 284.53769pt x 170.71591pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 834--835
+Underfull \hbox (badness 10000) in paragraph at lines 839--840
 
  []
 
-<virt_topo.jpg, id=127, 338.76563pt x 249.93375pt>
+<virt_topo.jpg, id=137, 338.76563pt x 249.93375pt>
 File: virt_topo.jpg Graphic file (type jpg)
  <use virt_topo.jpg>
-Package pdftex.def Info: virt_topo.jpg used on input line 840.
+Package pdftex.def Info: virt_topo.jpg used on input line 845.
 (pdftex.def)             Requested size: 227.62827pt x 142.26921pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 846--847
+Underfull \hbox (badness 10000) in paragraph at lines 851--852
 
  []
 
-<config.jpg, id=128, 473.51906pt x 348.55219pt>
+<config.jpg, id=138, 473.51906pt x 348.55219pt>
 File: config.jpg Graphic file (type jpg)
  <use config.jpg>
-Package pdftex.def Info: config.jpg used on input line 850.
+Package pdftex.def Info: config.jpg used on input line 855.
 (pdftex.def)             Requested size: 369.89972pt x 227.61992pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 855--856
+Underfull \hbox (badness 10000) in paragraph at lines 860--861
 
  []
 
-[25 <./sub_topo.jpg> <./virt_topo.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 869--869
+[27 <./sub_topo.jpg> <./virt_topo.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 874--874
 []\T1/5ch/m/it/9.5 Known nodes=1,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 870--870
+Underfull \hbox (badness 10000) in paragraph at lines 875--875
 []\T1/5ch/m/it/9.5 Known nodes=3,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 876--877
+Underfull \hbox (badness 10000) in paragraph at lines 881--882
 
  []
 
-[26 <./config.jpg>] <embedding.png, id=135, 1014.79124pt x 517.935pt>
+[28 <./config.jpg>] <embedding.png, id=146, 1014.79124pt x 517.935pt>
 File: embedding.png Graphic file (type png)
 
 <use embedding.png>
-Package pdftex.def Info: embedding.png used on input line 882.
+Package pdftex.def Info: embedding.png used on input line 887.
 (pdftex.def)             Requested size: 497.92325pt x 254.13019pt.
-
-Underfull \vbox (badness 4995) has occurred while \output is active []
-
- [27 <./embedding.png>] <CPU_PE.png, id=142, 329.73187pt x 252.19218pt>
+ [29 <./embedding.png>]
+<CPU_PE.png, id=151, 329.73187pt x 252.19218pt>
 File: CPU_PE.png Graphic file (type png)
  <use CPU_PE.png>
-Package pdftex.def Info: CPU_PE.png used on input line 902.
+Package pdftex.def Info: CPU_PE.png used on input line 907.
 (pdftex.def)             Requested size: 284.52756pt x 217.62373pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
 
  []
 
-<BW_PE.png, id=143, 398.99063pt x 309.40594pt>
+<BW_PE.png, id=152, 398.99063pt x 309.40594pt>
 File: BW_PE.png Graphic file (type png)
  <use BW_PE.png>
-Package pdftex.def Info: BW_PE.png used on input line 912.
+Package pdftex.def Info: BW_PE.png used on input line 917.
 (pdftex.def)             Requested size: 284.52756pt x 220.6523pt.
- [28 <./CPU_PE.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 917--918
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 922--923
 
  []
 
-<RES_CON_PE.png, id=148, 526.21594pt x 246.9225pt>
+[30 <./CPU_PE.png>] <RES_CON_PE.png, id=157, 526.21594pt x 246.9225pt>
 File: RES_CON_PE.png Graphic file (type png)
- <use RES_CON_PE.png>
-Package pdftex.def Info: RES_CON_PE.png used on input line 921.
+
+<use RES_CON_PE.png>
+Package pdftex.def Info: RES_CON_PE.png used on input line 926.
 (pdftex.def)             Requested size: 426.8107pt x 227.6198pt.
-
-[29 <./BW_PE.png> <./RES_CON_PE.png>] [30]
-<orch.jpg, id=155, 345.54094pt x 264.99pt>
-File: orch.jpg Graphic file (type jpg)
- <use orch.jpg>
-Package pdftex.def Info: orch.jpg used on input line 931.
-(pdftex.def)             Requested size: 284.53171pt x 170.71709pt.
-
-
-LaTeX Warning: Reference `part_embed_req1' on page 31 undefined on input line 9
-39.
-
-[31 <./orch.jpg>] (TUDthesis.bbl) [32] (TUDthesis.aux)
+ [31 <./BW_PE.png> <./RES_CON_PE.png>] [32] [33]
+(TUDthesis.bbl) [34] (TUDthesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1554,10 +1576,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9676 strings out of 493328
- 152461 string characters out of 3140849
- 316244 words of memory out of 3000000
- 12922 multiletter control sequences out of 15000+200000
+ 9681 strings out of 493328
+ 152522 string characters out of 3140849
+ 316254 words of memory out of 3000000
+ 12926 multiletter control sequences out of 15000+200000
  72770 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,23n,77p,8890b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1577,9 +1599,9 @@ TeX/2.9/fonts/type1/mathdesign/mdbch/md-chr7y.pfb><C:/Users/sTeve/AppData/Roami
 ng/MiKTeX/2.9/fonts/type1/mathdesign/mdbch/md-chri7m.pfb><C:/Program Files/MiKT
 eX/fonts/type1/adobe/utopia/putri8a.pfb><C:/Users/sTeve/AppData/Roaming/MiKTeX/
 2.9/fonts/type1/urw/arial/ua1r8a.pfb>
-Output written on TUDthesis.pdf (36 pages, 1234815 bytes).
+Output written on TUDthesis.pdf (38 pages, 1256047 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
+ 406 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
