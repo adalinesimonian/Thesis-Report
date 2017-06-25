@@ -1,0 +1,63 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.7)  11 DEC 2016 15:30
+entering extended mode
+**TUDthesis.tex
+
+("F:\TUD_Vorlagen_20.11.2016\TU_Vorlage\latex-tuddesign-thesis_0.0.20140703 (1)
+\texmf\doc\latex\tuddesign\TUDthesis.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+
+("F:\TUD_Vorlagen_20.11.2016\TU_Vorlage\latex-tuddesign-thesis_0.0.20140703 (1)
+\texmf\doc\latex\tuddesign\tudthesis.cls"
+Document Class: tudthesis 2009/05/15 0.96 Joe Werner's TUD-Design-Manual packag
+e
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+\XKV@depth=\count79
+File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex")))
+Class tudthesis Info: Unknown option 'article`. Pass to tudreport class. on inp
+ut line 37.
+Class tudthesis Info: Unknown option 'colorback`. Pass to tudreport class. on i
+nput line 37.
+Class tudthesis Info: Unknown option 'accentcolor=tud9c`. Pass to tudreport cla
+ss. on input line 37.
+
+
+! LaTeX Error: File `tudreport.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.44 \RequirePackage
+                    {tudthess_title}
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 245 strings out of 493921
+ 3950 string characters out of 3144871
+ 52083 words of memory out of 3000000
+ 3622 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,0n,33p,173b,22s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

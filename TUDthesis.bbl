@@ -1,0 +1,64 @@
+\begin{thebibliography}{10}
+
+\bibitem{nw_sharing}
+K.~K. Ashiq~Khan, Wolfgang~Kellerer and M.~Yabusaki, {\em Network Sharing in
+  the Next Mobile Network: TCO Reduction, Management Flexibility, and
+  Operational Independence}.
+\newblock DOCOMO Communications Laboratories Europe GmbH.
+
+\bibitem{nw_virt}
+N.~M. M.~K. Chowdhury and R.~Boutaba, {\em Network Virtualization: State of the
+  Art and Research Challenges}.
+\newblock University of Waterloo.
+
+\bibitem{arc_vn_mgmt}
+S.~S. A.~K. David Perez-Caparros, Ishan~Vaishnavi, {\em An Architecture for
+  Creating and Managing Virtual Networks}.
+\newblock DOCOMO Eurolabs, Munich, Germany.
+
+\bibitem{vne_survey}
+N.~M. M.~K. Chowdhury and R.~Boutaba, {\em Virtual Network Embedding: A
+  Survey}.
+
+\bibitem{h1}
+J.~Lu, Jing;~Turner, {\em Efficient Mapping of Virtual Networks onto a Shared
+  Substrate}.
+\newblock WUCSE, 2006.
+
+\bibitem{h2}
+J.~R. M.~C. Minlan~Yu, Yung~Yi, {\em Rethinking Virtual Network Embedding:
+  Substrate Support for Path Splitting and Migration}.
+\newblock Princeton University Princeton, NJ.
+
+\bibitem{h3}
+T.~a. t. n.~a. D.~Andersen, {\em Unpublished Manuscript,
+  http://www.cs.cmu.edu/∼dga/papers/andersen-assign}.
+\newblock 2002.
+
+\bibitem{h4}
+J.~Fan and M.~Ammar, {\em Dynamic topology configuration in service overlay
+  networks - a study of reconfiguration policies,}.
+\newblock in Proceedings of IEEE INFOCOM,, 2006.
+
+\bibitem{coord_map}
+M.~R.~R. N.~M. Mosharaf Kabir~Chowdhury, Raouf~Boutaba, {\em Virtual Network
+  Embedding with Coordinated Node and Link Mapping}.
+\newblock University of Waterloo Waterloo, Canada.
+
+\bibitem{vn_multiple}
+W.~B. A. D.~Z. Ines~Houidi, Wajdi~Louati, {\em Virtual network provisioning
+  across multiple substrate}.
+\newblock Telecom SubParis, France.
+
+\bibitem{vneapproach}
+I.~V. Z. D. A. H. S. B. D.~S. R.~Guerzoni, R.~Trivisonno, {\em A Novel Approach
+  to Virtual Networks Embedding for SDN Management and Orchestration}.
+\newblock Huawei European Research Center Riesstrasse 25, Munich, Germany.
+
+\bibitem{7116141}
+I.~Vaishnavi, R.~Guerzoni, and R.~Trivisonno, ``Recursive, hierarchical
+  embedding of virtual infrastructure in multi-domain substrates,'' in {\em
+  Proceedings of the 2015 1st IEEE Conference on Network Softwarization
+  (NetSoft)}, pp.~1--9, April 2015.
+
+\end{thebibliography}

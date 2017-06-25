@@ -1,0 +1,172 @@
+% Encoding: UTF-8
+
+@BOOK{fcn_challenges,
+	AUTHOR="Atsushi Takahara, Hisaya Hadama, Takeshi Motohashi, and Yoshihiro Takigawa",
+	TITLE="Research Challenges for Future Carrier Networks",
+	PUBLISHER=" ",
+	YEAR="",
+}
+
+@BOOK{nw_sharing,
+	AUTHOR="Ashiq Khan, Wolfgang Kellerer, Kazuyuki Kozu, and Masami Yabusaki",
+	TITLE="Network Sharing in the Next Mobile
+	Network: TCO Reduction,
+	Management Flexibility, and
+	Operational Independence",
+	PUBLISHER="DOCOMO Communications Laboratories Europe GmbH",
+	YEAR="",
+}
+
+
+@BOOK{nw_virt,
+	AUTHOR="N. M. Mosharaf Kabir Chowdhury and Raouf Boutaba",
+	TITLE="Network Virtualization: State of the Art and Research Challenges",
+	PUBLISHER="University of Waterloo",
+	YEAR="",
+}
+
+
+
+@BOOK{vne_survey,
+	AUTHOR="N. M. Mosharaf Kabir Chowdhury and Raouf Boutaba",
+	TITLE="Virtual Network Embedding: A Survey",
+	PUBLISHER=" ",
+	YEAR="",
+}
+
+
+
+
+@BOOK{arc_vn_mgmt ,
+AUTHOR="David Perez-Caparros, Ishan Vaishnavi, Stefan Schmidy, Ashiq Khan",
+TITLE="An Architecture for Creating and Managing Virtual Networks",
+PUBLISHER="DOCOMO Eurolabs,  Munich, Germany",
+YEAR=" ",
+}
+
+@Book{Perez-Caparros,
+  title     = {An Architecture for Creating and Managing Virtual Networks},
+  publisher = {DOCOMO Eurolabs, Munich, Germany},
+  author    = {David Perez-Caparros, Ishan Vaishnavi, Stefan Schmidy, Ashiq Khan},
+}
+
+
+
+@BOOK{h1,
+	AUTHOR="Lu, Jing; Turner, Jonathan",
+	TITLE="Efficient Mapping of Virtual Networks onto a Shared Substrate",
+	PUBLISHER="WUCSE",
+	YEAR="2006",
+}
+
+
+@BOOK{h2,
+	AUTHOR="Minlan Yu, Yung Yi, Jennifer Rexford, Mung Chiang",
+	TITLE="Rethinking Virtual Network Embedding: Substrate Support for Path Splitting and Migration",
+	PUBLISHER="Princeton University Princeton, NJ",
+	YEAR=" ",
+}
+
+
+@BOOK{h3,
+	AUTHOR="D. Andersen, “Theoretical approaches to node assignment",
+	TITLE="Unpublished
+	Manuscript, http://www.cs.cmu.edu/∼dga/papers/andersen-assign",
+	PUBLISHER=" ",
+	YEAR="2002",
+}
+
+
+@BOOK{h4,
+	AUTHOR="J. Fan and M. Ammar",
+	TITLE="Dynamic topology configuration in service
+	overlay networks - a study of reconfiguration policies,",
+	PUBLISHER="in Proceedings of IEEE INFOCOM,",
+	YEAR="2006",
+}
+
+@BOOK{coord_map,
+	AUTHOR="N. M. Mosharaf Kabir Chowdhury, Raouf Boutaba, Muntasir Raihan Rahman",
+	TITLE="Virtual Network Embedding with Coordinated Node and Link Mapping",
+	PUBLISHER="University of Waterloo
+	Waterloo, Canada",
+	YEAR="",
+}
+ 
+@BOOK{MIP,
+	AUTHOR="A. Schrijver",
+	TITLE=" Theory of linear and integer programming",
+	PUBLISHER="NewYork,	NY, USA: John Wiley & Sons, Inc.",
+	YEAR="1986",
+}
+ 
+ 
+@BOOK{vn_multiple,
+	AUTHOR="Ines Houidi, Wajdi Louati, Walid Bin Ameur, Djamal Zeghlache",
+	TITLE="Virtual network provisioning across multiple substrate",
+ 	PUBLISHER="Telecom SubParis, France",
+ 	YEAR="",
+}
+ 
+
+
+@BOOK{ethics,
+AUTHOR=" Ines Houidi, Wajdi Louati, Walid Ben Ameur, Djamal Zeghlache",
+TITLE="Virtual network provisioning across multiple substrate networks",
+PUBLISHER="",
+YEAR="",
+}
+
+
+@BOOK{md-monitor,
+AUTHOR=" Ishan Vaishnavi, Riccardo Guerzoni, Riccardo Trivisonno",
+TITLE="Recursive, Hierarchical Embedding of Virtual Infrastructure in Multi-
+Domain Substrates",
+PUBLISHER="Huawei Technologies Dusseldorf GmBH, Riesstrasse 25, Munich",
+YEAR=" ",
+}
+
+
+@BOOK{vneapproach,
+AUTHOR="R. Guerzoni, R. Trivisonno, I. Vaishnavi, Z. Despotovic, A. Hecker, S. Beker, D. Soldani",
+TITLE="A Novel Approach to Virtual Networks Embedding
+for SDN Management and Orchestration",
+PUBLISHER="Huawei European Research Center
+Riesstrasse 25, Munich, Germany",
+YEAR="",
+}
+
+@InProceedings{4086425,
+  author    = {R. Jain},
+  title     = {Internet 3.0: Ten Problems with Current Internet Architecture and Solutions for the Next Generation},
+  booktitle = {MILCOM 2006 - 2006 IEEE Military Communications conference},
+  year      = {2006},
+  pages     = {1-9},
+  month     = {Oct},
+  doi       = {10.1109/MILCOM.2006.301995},
+  issn      = {2155-7578},
+  keywords  = {Internet;business communication;data communication;government;telecommunication security;Internet 3.0;Internet architecture;centralized control;government;information transport architecture;secure communication;Centralized control;Computer architecture;Computer science;Government;Internet;Intrusion detection;Investments;Packet switching;Proposals;Protection},
+}
+
+@Article{1432642,
+  author   = {T. Anderson and L. Peterson and S. Shenker and J. Turner},
+  title    = {Overcoming the Internet impasse through virtualization},
+  journal  = {Computer},
+  year     = {2005},
+  volume   = {38},
+  number   = {4},
+  pages    = {34-41},
+  month    = {April},
+  issn     = {0018-9162},
+  doi      = {10.1109/MC.2005.136},
+  keywords = {Internet;open systems;Internet architecture;Internet routing;virtual testbed;Communication standards;Computer architecture;Current measurement;Emulation;Internet;Proposals;Technological innovation;Telecommunication traffic;Testing;Traffic control;Internet architecture;PlanetLab;computer architectures;overlay network;physical testbed;virtual testbed},
+}
+
+@Book{fcn_arc,
+  title     = {Challenges for Next Generation Network Operations and Service Management},
+  publisher = {11th Asia-Pacific Network Operations and Management Symposium, APNOMS},
+  year      = {2008},
+  author    = {Yan Ma, Deokjai Choi, Shingo Ata},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

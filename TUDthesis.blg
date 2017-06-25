@@ -1,0 +1,35 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: TUDthesis.aux
+The style file: ieeetr.bst
+Database file #1: biblography.bib
+Warning--I didn't find a database entry for "4086425"
+Warning--I didn't find a database entry for "fcn_arc"
+Warning--I didn't find a database entry for "1432642"
+Warning--I didn't find a database entry for "multi-domain"
+Warning--I didn't find a database entry for "EHTICS"
+Name 1 in "Ashiq Khan, Wolfgang Kellerer, Kazuyuki Kozu, and Masami Yabusaki" has a comma at the end for entry nw_sharing
+while executing---line 969 of file ieeetr.bst
+Warning--empty year in nw_sharing
+Warning--empty year in nw_virt
+Too many commas in name 1 of "David Perez-Caparros, Ishan Vaishnavi, Stefan Schmidy, Ashiq Khan" for entry arc_vn_mgmt
+while executing---line 969 of file ieeetr.bst
+Warning--empty year in arc_vn_mgmt
+Warning--empty publisher in vne_survey
+Warning--empty year in vne_survey
+Too many commas in name 1 of "Minlan Yu, Yung Yi, Jennifer Rexford, Mung Chiang" for entry h2
+while executing---line 969 of file ieeetr.bst
+Warning--empty year in h2
+Warning--empty publisher in h3
+Warning--empty year in coord_map
+Too many commas in name 1 of "Ines Houidi, Wajdi Louati, Walid Bin Ameur, Djamal Zeghlache" for entry vn_multiple
+while executing---line 969 of file ieeetr.bst
+Warning--empty year in vn_multiple
+Too many commas in name 1 of "R. Guerzoni, R. Trivisonno, I. Vaishnavi, Z. Despotovic, A. Hecker, S. Beker, D. Soldani" for entry vneapproach
+while executing---line 969 of file ieeetr.bst
+Too many commas in name 1 of "R. Guerzoni, R. Trivisonno, I. Vaishnavi, Z. Despotovic, A. Hecker, S. Beker, D. Soldani" for entry vneapproach
+while executing---line 969 of file ieeetr.bst
+Too many commas in name 1 of "R. Guerzoni, R. Trivisonno, I. Vaishnavi, Z. Despotovic, A. Hecker, S. Beker, D. Soldani" for entry vneapproach
+while executing---line 969 of file ieeetr.bst
+Too many commas in name 1 of "R. Guerzoni, R. Trivisonno, I. Vaishnavi, Z. Despotovic, A. Hecker, S. Beker, D. Soldani" for entry vneapproach
+while executing---line 969 of file ieeetr.bst
+Warning--empty year in vneapproach
+(There were 8 error messages)
