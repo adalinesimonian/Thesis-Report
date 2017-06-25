@@ -894,20 +894,35 @@ This fulfils our first requirement of partial embedding. Now our algorithm is ab
 \end{enumerate}
 
 Results: 
-In our experiment we assigned low embedding costs to known domains and high embedding costs to infinite domains (table .\ref{cost_table}) so that operator's own domain makes high profit by leasing its resources to more number of virtual networks. The results gathered in the experiment shows that, in the beginning our algorithm starts allocating known node's resources to VN requests till there is sufficient amount of resource to embed. After that  
-the resources from infinite nodes are used to serve the upcoming VN requests.
+In our experiment we assigned low embedding costs to known domains and high embedding costs to infinite domains (table .\ref{cost_table}), so that operator's own domain makes high profit by leasing its resources to more number of virtual networks. The results gathered in the experiment shows that, in the beginning our algorithm starts allocating known node's resources to VN requests till there is sufficient amount of resource to embed. After that  
+the resources from infinite nodes are used to serve the upcoming VN requests. We run the simulation with 100 virtual network requests with each request having different topology compared to others. Same number of virtual nodes are used for every VN request. Only difference is the connection between the virtual nodes and the resource demand they have. The following results depicts average resource allocation for same set of 100 VN request for 10 different physical network topologies keeping the embedding costs and other parameters same.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{CPU_PE.png}
-	\caption{CPU Resource Allocation}
+	\caption{Average CPU Allocation}
 	\label{cpu_alloc}
 \end{figure}
 
-The figure (fig .\ref{cpu_alloc}) shows the allocation of CPU resources for each VN request. We run 100 VN request per one round
+The figure (fig .\ref{cpu_alloc}) shows the allocation of CPU resource for each VN request. We mainly considered CPU demand and bandwidth demand as VN resource demands. As mentioned earlier each virtual node has CPU demand in the range of 1 to 100xVNF CPU units where VNF is taken as 0.5. Because of the embedding cost in known nodes being cheaper than infinite nodes, the algorithm starts using maximum resource in the known nodes. Also because of higher embedding cost, resource from infinite nodes are only used when there is no sufficient amount resource for a VN. This can be observed from the figure where the entire resource demands from the first few VN requests are served only in known nodes (Red in colour). That is, 100\% of the resource demands from VNs are allocated in the known node. After some time, this percentage gradually decreases because of insufficient resource in known domain. Then the resource from infinite resource are used for next set of VN requests. For instance, after some 25 VN requests, more than 50\% of the resource demand is served by infinite nodes. And when the VN request is nearer to 90 only 20\% of resource demand is served by knnown nodes and remaining 80\% of the resource is allocated in infinite nodes. It can be seen that for most of the VN requests, resource are allocated both in known nodes and infinite nodes which is a clear indication of "Partial Embedding ". \newline
 
+Similar results are obtained for bandwidth allocation for each virtual link of a VN request. When all the virtual nodes are embedded in known nodes, bandwidth for all the virtual links of this VN request is allocated in the same known node. But in case of partial embedding, more bandwidth is allocated altogether in known and infinite nodes than the actual bandwidth demand by the VN request. This is because of a scenario where a 2-node sub-graph is embedded, one virtual node mapped in known node and one in infinite node. In this case the single link connecting these two nodes need to be embedded in both known nodes and infinite nodes. For instance, consider a 2-node graph with virtual link bandwidth demand of 10 units. When one virtual node is embedded in known domain, a virtual link of bandwidth 10 units is also embedded in that known node. For the second virtual node embedded in the infinite node, again a virtual link with 10 bandwidth units is mapped in this infinite node. So two virtual links each of 10 bandwidth units are embedded. The figure (fig .\ref{BW_alloc}) below depicts bandwidth allocation for each VN request in both known nodes and infinite nodes.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{BW_PE.png}
+	\caption{Average Bandwidth Allocation}
+	\label{BW_alloc}
+\end{figure}
 
+Another graph below (fig .\ref{resr_consumption}) summarizes resource allocation and how the resources are consumed in known nodes for every VN request. This graph is to show the resource status only in known nodes and resource status of infinite nodes are not considered. The graph has four plots with different colours representing type of resource allocated and consumed. The line with blue colour represents CPU allocation in the known nodes. It clearly shows for the first 2-3 VN requests 100\% of resource demand is served by known nodes. With the increase in incoming VN requests, this blue line gradually decreases. The blue line plot is another way of visualising the graph in fig .\ref{cpu_alloc}. The brown line plot represents bandwidth allocated for every VN request. Alike the cpu allocation bandwidth allocation in known nodes also decrease with increase in VN requests. \newline 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm, height=8cm]{RES_CON_PE.png}
+	\caption{Summary of Resource Allocation and Consumption in Known Nodes}
+	\label{resr_consumption}
+\end{figure}
+The remaining two plots represents resource availability in known nodes after serving each VN requests. At first the available resource was full (100\%) till the first VN request is served. The green line plot is for showing remaining CPU capacity of the known node and purple line plot for remaining bandwidth capacity of a known node. It can be observed that maximum CPU and bandwidth resources are consumed for first few VN requests leaving the resource capacity to almost 10\% of the resource the known node had, before embedding any VN request. From the VN request 20 to 80 resource from both known node and infinite nodes are utilized, hence the the remaining resource decrese gradually in known node. The resources of the known node is utilized till it almost becomes 0\%. At this stage, algorithm starts looking at infinite node for upcoming VN requests. 
 \newpage
 \subsection{Requirement II: }
 

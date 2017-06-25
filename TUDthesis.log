@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.2)  25 JUN 2017 19:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.2)  25 JUN 2017 22:18
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -1514,17 +1514,38 @@ File: CPU_PE.png Graphic file (type png)
 Package pdftex.def Info: CPU_PE.png used on input line 902.
 (pdftex.def)             Requested size: 284.52756pt x 217.62373pt.
 
-[28 <./CPU_PE.png>] <orch.jpg, id=146, 345.54094pt x 264.99pt>
+Underfull \hbox (badness 10000) in paragraph at lines 907--908
+
+ []
+
+<BW_PE.png, id=143, 398.99063pt x 309.40594pt>
+File: BW_PE.png Graphic file (type png)
+ <use BW_PE.png>
+Package pdftex.def Info: BW_PE.png used on input line 912.
+(pdftex.def)             Requested size: 284.52756pt x 220.6523pt.
+ [28 <./CPU_PE.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 917--918
+
+ []
+
+<RES_CON_PE.png, id=148, 526.21594pt x 246.9225pt>
+File: RES_CON_PE.png Graphic file (type png)
+ <use RES_CON_PE.png>
+Package pdftex.def Info: RES_CON_PE.png used on input line 921.
+(pdftex.def)             Requested size: 426.8107pt x 227.6198pt.
+
+[29 <./BW_PE.png> <./RES_CON_PE.png>] [30]
+<orch.jpg, id=155, 345.54094pt x 264.99pt>
 File: orch.jpg Graphic file (type jpg)
  <use orch.jpg>
-Package pdftex.def Info: orch.jpg used on input line 916.
+Package pdftex.def Info: orch.jpg used on input line 931.
 (pdftex.def)             Requested size: 284.53171pt x 170.71709pt.
 
 
-LaTeX Warning: Reference `part_embed_req1' on page 29 undefined on input line 9
-24.
+LaTeX Warning: Reference `part_embed_req1' on page 31 undefined on input line 9
+39.
 
-[29 <./orch.jpg>] (TUDthesis.bbl) [30] (TUDthesis.aux)
+[31 <./orch.jpg>] (TUDthesis.bbl) [32] (TUDthesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1533,10 +1554,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9664 strings out of 493328
- 152280 string characters out of 3140849
- 316224 words of memory out of 3000000
- 12912 multiletter control sequences out of 15000+200000
+ 9676 strings out of 493328
+ 152461 string characters out of 3140849
+ 316244 words of memory out of 3000000
+ 12922 multiletter control sequences out of 15000+200000
  72770 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,23n,77p,8890b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1556,9 +1577,9 @@ TeX/2.9/fonts/type1/mathdesign/mdbch/md-chr7y.pfb><C:/Users/sTeve/AppData/Roami
 ng/MiKTeX/2.9/fonts/type1/mathdesign/mdbch/md-chri7m.pfb><C:/Program Files/MiKT
 eX/fonts/type1/adobe/utopia/putri8a.pfb><C:/Users/sTeve/AppData/Roaming/MiKTeX/
 2.9/fonts/type1/urw/arial/ua1r8a.pfb>
-Output written on TUDthesis.pdf (34 pages, 926139 bytes).
+Output written on TUDthesis.pdf (36 pages, 1234815 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
+ 396 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
