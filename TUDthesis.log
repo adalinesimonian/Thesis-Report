@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.2)  26 JUN 2017 03:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.2)  28 JUN 2017 03:37
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -678,6 +678,11 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box34
 \enitdp@description=\count112
 )
+("C:\Program Files\MiKTeX\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen131
+\epsfysize=\dimen132
+)
 
 LaTeX Warning: Unused global option(s):
     [article,colorback,accentcolor=tud4b].
@@ -685,51 +690,51 @@ LaTeX Warning: Unused global option(s):
 (TUDthesis.aux)
 \openout1 = `TUDthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for MDA+cmr on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 18.
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for MDB+cmr on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 18.
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdbcmr.fd
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Try loading font information for T1+5ch on input line 17.
-LaTeX Font Info:    No file T15ch.fd. on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for T1+5ch on input line 18.
+LaTeX Font Info:    No file T15ch.fd. on input line 18.
 
 
 LaTeX Font Warning: Font shape `T1/5ch/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 17.
+(Font)              using `T1/cmr/m/n' instead on input line 18.
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count113
-\scratchdimen=\dimen131
+\scratchdimen=\dimen133
 \scratchbox=\box35
 \nofMPsegments=\count114
 \nofMParguments=\count115
 \everyMPshowfont=\toks26
 \MPscratchCnt=\count116
-\MPscratchDim=\dimen132
+\MPscratchDim=\dimen134
 \MPnumerator=\count117
 \makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks27
@@ -813,7 +818,7 @@ G,.JBIG2,.JB2,.eps]
 \TUD@part@topskip=\skip112
 
 Package  Warning: Command `\dateofexam ' ignored!
-()                See documentation for details. on input line 25.
+()                See documentation for details. on input line 26.
 
 \@TUD@tmp@baselineskip=\skip113
 \TUD@titleboxheight=\skip114
@@ -837,19 +842,19 @@ Package  Warning: Command `\dateofexam ' ignored!
 \TUD@sponsorbox=\box41
 \TUD@tmp@height=\skip128
 \TUD@tmp@depth=\skip129
-LaTeX Font Info:    Try loading font information for T1+ua1 on input line 27.
+LaTeX Font Info:    Try loading font information for T1+ua1 on input line 28.
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\arial\t1ua1.fd
 File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
 )
 
 LaTeX Font Warning: Font shape `T1/ua1/mb/n' undefined
-(Font)              using `T1/ua1/m/n' instead on input line 27.
+(Font)              using `T1/ua1/m/n' instead on input line 28.
 
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 34.19989pt on input line 27.
+(Font)              scaled to size 34.19989pt on input line 28.
 LaTeX Font Info:    Font shape `T1/ua1/mb/n' will be
-(Font)              scaled to size 34.19989pt on input line 27.
-LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 27
+(Font)              scaled to size 34.19989pt on input line 28.
+LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 28
 .
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdbch\ot1mdbch.
@@ -857,12 +862,12 @@ fd
 File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
 )
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 27.
+(Font)              scaled to size 9.50406pt on input line 28.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 27.
+(Font)              scaled to size 6.62404pt on input line 28.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 27.
-LaTeX Font Info:    Try loading font information for OML+mdbch on input line 27
+(Font)              scaled to size 5.66403pt on input line 28.
+LaTeX Font Info:    Try loading font information for OML+mdbch on input line 28
 .
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdbch\omlmdbch.
@@ -870,12 +875,12 @@ fd
 File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
 )
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 9.50406pt on input line 27.
+(Font)              scaled to size 9.50406pt on input line 28.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 6.62404pt on input line 27.
+(Font)              scaled to size 6.62404pt on input line 28.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 5.66403pt on input line 27.
-LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 27
+(Font)              scaled to size 5.66403pt on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 28
 .
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdbch\omsmdbch.
@@ -883,12 +888,12 @@ fd
 File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
 )
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 27.
+(Font)              scaled to size 9.50406pt on input line 28.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 27.
+(Font)              scaled to size 6.62404pt on input line 28.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 27.
-LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 27
+(Font)              scaled to size 5.66403pt on input line 28.
+LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 28
 .
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdbch\omxmdbch.
@@ -896,18 +901,18 @@ fd
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 27.
+(Font)              scaled to size 9.50406pt on input line 28.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 27.
+(Font)              scaled to size 6.62404pt on input line 28.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 27.
+(Font)              scaled to size 5.66403pt on input line 28.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 27.
+(Font)              scaled to size 9.50406pt on input line 28.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 27.
+(Font)              scaled to size 6.62404pt on input line 28.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 27.
-LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 27
+(Font)              scaled to size 5.66403pt on input line 28.
+LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 28
 .
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdbch\mdamdbch.
@@ -915,12 +920,12 @@ fd
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 27.
+(Font)              scaled to size 9.50406pt on input line 28.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 27.
+(Font)              scaled to size 6.62404pt on input line 28.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 27.
-LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 27
+(Font)              scaled to size 5.66403pt on input line 28.
+LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 28
 .
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdbch\mdbmdbch.
@@ -928,12 +933,12 @@ fd
 File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
 )
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 27.
+(Font)              scaled to size 9.50406pt on input line 28.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 27.
+(Font)              scaled to size 6.62404pt on input line 28.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 27.
-LaTeX Font Info:    Try loading font information for OML+mdput on input line 27
+(Font)              scaled to size 5.66403pt on input line 28.
+LaTeX Font Info:    Try loading font information for OML+mdput on input line 28
 .
 
 (C:\Users\sTeve\AppData\Roaming\MiKTeX\2.9\tex\latex\mathdesign\mdput\omlmdput.
@@ -941,28 +946,28 @@ fd
 File: omlmdput.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdput.
 )
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 9.30602pt on input line 27.
+(Font)              scaled to size 9.30602pt on input line 28.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 6.48601pt on input line 27.
+(Font)              scaled to size 6.48601pt on input line 28.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 5.546pt on input line 27.
+(Font)              scaled to size 5.546pt on input line 28.
 LaTeX Font Info:    Font shape `T1/ua1/mb/n' will be
-(Font)              scaled to size 9.49997pt on input line 27.
+(Font)              scaled to size 9.49997pt on input line 28.
 \@TUD@titlelines=\count119
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 10.92496pt on input line 27.
+(Font)              scaled to size 10.92496pt on input line 28.
  <tud_logo.pdf, id=1, 157.58875pt x 63.23625pt>
 File: tud_logo.pdf Graphic file (type pdf)
  <use tud_logo.pdf>
-Package pdftex.def Info: tud_logo.pdf used on input line 27.
+Package pdftex.def Info: tud_logo.pdf used on input line 28.
 (pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
 File: tud_logo.pdf Graphic file (type pdf)
 
 <use tud_logo.pdf>
-Package pdftex.def Info: tud_logo.pdf used on input line 27.
+Package pdftex.def Info: tud_logo.pdf used on input line 28.
 (pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 27.
+(Font)              scaled to size 6.64998pt on input line 28.
 \@TUD@logolines=\count120
  [-1
 Non-PDF special ignored!
@@ -970,26 +975,26 @@ Non-PDF special ignored!
 
 Non-PDF special ignored!{C:/Users/sTeve/AppData/Local/MiKTeX/2.9/pdftex/config/
 pdftex.map} <./tud_logo.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 27--27
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+5sf on input line 27.
-LaTeX Font Info:    No file T15sf.fd. on input line 27.
+LaTeX Font Info:    Try loading font information for T1+5sf on input line 28.
+LaTeX Font Info:    No file T15sf.fd. on input line 28.
 
 LaTeX Font Warning: Font shape `T1/5sf/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 27.
+(Font)              using `T1/cmr/m/n' instead on input line 28.
 
 <by-nc-nd.pdf, id=13, 121.45375pt x 43.16125pt>
 File: by-nc-nd.pdf Graphic file (type pdf)
  <use by-nc-nd.pdf>
-Package pdftex.def Info: by-nc-nd.pdf used on input line 27.
+Package pdftex.def Info: by-nc-nd.pdf used on input line 28.
 (pdftex.def)             Requested size: 121.45343pt x 43.16113pt.
  [0
 
  <./by-nc-nd.pdf>]
 LaTeX Font Info:    Font shape `T1/ua1/mb/n' will be
-(Font)              scaled to size 18.99994pt on input line 28.
+(Font)              scaled to size 18.99994pt on input line 29.
  [1
 
 
@@ -1000,574 +1005,626 @@ LaTeX Font Info:    Font shape `T1/ua1/mb/n' will be
 \openout3 = `TUDthesis.toc'.
 
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 33.
+(Font)              scaled to size 9.49997pt on input line 34.
  [0
 
 ]
 
 LaTeX Font Warning: Font shape `T1/5ch/b/n' undefined
-(Font)              using `T1/5ch/m/n' instead on input line 37.
+(Font)              using `T1/5ch/m/n' instead on input line 38.
 
 
-LaTeX Warning: Citation `4086425' on page 1 undefined on input line 37.
+LaTeX Warning: Citation `4086425' on page 1 undefined on input line 38.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
 
-LaTeX Warning: Citation `fcn_arc' on page 1 undefined on input line 41.
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+LaTeX Warning: Citation `fcn_arc' on page 1 undefined on input line 42.
 
 <fcn_arc.jpg, id=29, 574.39594pt x 329.73187pt>
 File: fcn_arc.jpg Graphic file (type jpg)
  <use fcn_arc.jpg>
-Package pdftex.def Info: fcn_arc.jpg used on input line 45.
+Package pdftex.def Info: fcn_arc.jpg used on input line 46.
 (pdftex.def)             Requested size: 455.24408pt x 261.34062pt.
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 9.02496pt on input line 46.
+(Font)              scaled to size 9.02496pt on input line 47.
 LaTeX Font Info:    Font shape `T1/ua1/mb/n' will be
-(Font)              scaled to size 9.02496pt on input line 46.
+(Font)              scaled to size 9.02496pt on input line 47.
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
 
-LaTeX Warning: Citation `1432642' on page 1 undefined on input line 52.
+LaTeX Warning: Citation `1432642' on page 1 undefined on input line 53.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
 
  []
 
 [1 <./fcn_arc.jpg>] <vne.jpg, id=33, 389.20406pt x 286.06876pt>
 File: vne.jpg Graphic file (type jpg)
  <use vne.jpg>
-Package pdftex.def Info: vne.jpg used on input line 57.
+Package pdftex.def Info: vne.jpg used on input line 58.
 (pdftex.def)             Requested size: 398.3488pt x 256.07578pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 [2 <./vne.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 
 LaTeX Font Warning: Font shape `T1/5ch/m/it' undefined
-(Font)              using `T1/5ch/m/n' instead on input line 71.
+(Font)              using `T1/5ch/m/n' instead on input line 72.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
 [4] <VN.jpg, id=44, 395.22656pt x 283.0575pt>
 File: VN.jpg Graphic file (type jpg)
  <use VN.jpg>
-Package pdftex.def Info: VN.jpg used on input line 120.
+Package pdftex.def Info: VN.jpg used on input line 121.
 (pdftex.def)             Requested size: 398.34343pt x 227.62973pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
 [5 <./VN.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 <coord_map.jpg, id=51, 383.93437pt x 259.7203pt>
 File: coord_map.jpg Graphic file (type jpg)
  <use coord_map.jpg>
-Package pdftex.def Info: coord_map.jpg used on input line 155.
+Package pdftex.def Info: coord_map.jpg used on input line 156.
 (pdftex.def)             Requested size: 398.36256pt x 227.6193pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
 [7 <./coord_map.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 179--182
+Underfull \hbox (badness 10000) in paragraph at lines 180--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--194
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
 <vn_splitting.jpg, id=64, 317.68687pt x 286.06876pt>
 File: vn_splitting.jpg Graphic file (type jpg)
  <use vn_splitting.jpg>
-Package pdftex.def Info: vn_splitting.jpg used on input line 209.
+Package pdftex.def Info: vn_splitting.jpg used on input line 212.
 (pdftex.def)             Requested size: 284.55338pt x 170.71718pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
-[9 <./vn_splitting.jpg>] <vn_embedding.jpg, id=69, 234.1247pt x 274.77657pt>
+
+Underfull \vbox (badness 3482) has occurred while \output is active []
+
+ [9 <./vn_splitting.jpg>] <vn_embedding.jpg, id=69, 234.1247pt x 274.77657pt>
 File: vn_embedding.jpg Graphic file (type jpg)
 
 <use vn_embedding.jpg>
-Package pdftex.def Info: vn_embedding.jpg used on input line 221.
+Package pdftex.def Info: vn_embedding.jpg used on input line 224.
 (pdftex.def)             Requested size: 170.72383pt x 170.72028pt.
-
-
-LaTeX Warning: Reference `fig: Network Orchestration ' on page 10 undefined on 
-input line 234.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+ [10 <./vn_embedding.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-<sdn_orc.jpg, id=70, 411.78844pt x 121.95563pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+<IDE_VN.png, id=73, 823.57687pt x 228.10219pt>
+File: IDE_VN.png Graphic file (type png)
+ <use IDE_VN.png>
+Package pdftex.def Info: IDE_VN.png used on input line 258.
+(pdftex.def)             Requested size: 497.92325pt x 137.90651pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11] <IDE_decomp.png, id=77, 569.12625pt x 209.28188pt>
+File: IDE_decomp.png Graphic file (type png)
+ <use IDE_decomp.png>
+Package pdftex.def Info: IDE_decomp.png used on input line 273.
+(pdftex.def)             Requested size: 497.92325pt x 183.1084pt.
+
+[12 <./IDE_VN.png> <./IDE_decomp.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
+
+ []
+
+<sdn_orc.jpg, id=81, 411.78844pt x 121.95563pt>
 File: sdn_orc.jpg Graphic file (type jpg)
  <use sdn_orc.jpg>
-Package pdftex.def Info: sdn_orc.jpg used on input line 239.
+Package pdftex.def Info: sdn_orc.jpg used on input line 311.
 (pdftex.def)             Requested size: 398.34097pt x 113.81204pt.
- [10 <./vn_embedding.jpg>]
-LaTeX Font Info:    Try loading font information for TS1+5ch on input line 253.
 
-LaTeX Font Info:    No file TS15ch.fd. on input line 253.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13]
+LaTeX Font Info:    Try loading font information for TS1+5ch on input line 325.
+
+LaTeX Font Info:    No file TS15ch.fd. on input line 325.
 
 
 LaTeX Font Warning: Font shape `TS1/5ch/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textbullet' on input line 253.
+(Font)              for symbol `textbullet' on input line 325.
 
-[11 <./sdn_orc.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+[14 <./sdn_orc.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 465--467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--411
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--419
+Underfull \hbox (badness 10000) in paragraph at lines 480--483
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
 
  []
 
-[14] <nw_abst.jpg, id=88, 496.85625pt x 204.765pt>
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+<nw_abst.jpg, id=97, 496.85625pt x 204.765pt>
 File: nw_abst.jpg Graphic file (type jpg)
  <use nw_abst.jpg>
-Package pdftex.def Info: nw_abst.jpg used on input line 430.
+Package pdftex.def Info: nw_abst.jpg used on input line 501.
 (pdftex.def)             Requested size: 341.43619pt x 170.72662pt.
 
 
-LaTeX Warning: Citation `multi-domain' on page 15 undefined on input line 436.
+LaTeX Warning: Citation `multi-domain' on page 17 undefined on input line 507.
 
 
-LaTeX Warning: Citation `EHTICS' on page 15 undefined on input line 436.
+LaTeX Warning: Citation `EHTICS' on page 17 undefined on input line 507.
 
 
-LaTeX Warning: Citation `multi-domain' on page 15 undefined on input line 436.
+LaTeX Warning: Citation `multi-domain' on page 17 undefined on input line 507.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--439
+[17 <./nw_abst.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
 
  []
 
-<modify.jpg, id=89, 491.58656pt x 216.81pt>
+<modify.jpg, id=101, 491.58656pt x 216.81pt>
 File: modify.jpg Graphic file (type jpg)
  <use modify.jpg>
-Package pdftex.def Info: modify.jpg used on input line 442.
+Package pdftex.def Info: modify.jpg used on input line 513.
 (pdftex.def)             Requested size: 398.35545pt x 142.27127pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--449
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--451
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
-<sw_model.jpg, id=90, 529.98pt x 231.86626pt>
+<sw_model.jpg, id=102, 529.98pt x 231.86626pt>
 File: sw_model.jpg Graphic file (type jpg)
  <use sw_model.jpg>
-Package pdftex.def Info: sw_model.jpg used on input line 455.
+Package pdftex.def Info: sw_model.jpg used on input line 526.
 (pdftex.def)             Requested size: 341.43416pt x 113.81357pt.
- [15 <./nw_abst.jpg>] [16 <./modify.jpg> <./sw_model.jpg>]
-<bw_model.jpg, id=98, 319.1925pt x 144.54pt>
-File: bw_model.jpg Graphic file (type jpg)
- <use bw_model.jpg>
-Package pdftex.def Info: bw_model.jpg used on input line 529.
-(pdftex.def)             Requested size: 227.62183pt x 85.35724pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 548--550
+[18 <./modify.jpg>] [19 <./sw_model.jpg>]
+<bw_model.jpg, id=109, 319.1925pt x 144.54pt>
+File: bw_model.jpg Graphic file (type jpg)
+ <use bw_model.jpg>
+Package pdftex.def Info: bw_model.jpg used on input line 600.
+(pdftex.def)             Requested size: 227.62183pt x 85.35724pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--621
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--558
+Underfull \hbox (badness 10000) in paragraph at lines 627--629
 
  []
 
-[18 <./bw_model.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
-
- []
-
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+[20 <./bw_model.jpg>] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--652
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
-<Part_embed.jpg, id=112, 980.16188pt x 464.4853pt>
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--723
+
+ []
+
+<Part_embed.jpg, id=121, 980.16188pt x 464.4853pt>
 File: Part_embed.jpg Graphic file (type jpg)
  <use Part_embed.jpg>
-Package pdftex.def Info: Part_embed.jpg used on input line 656.
+Package pdftex.def Info: Part_embed.jpg used on input line 727.
 (pdftex.def)             Requested size: 398.33936pt x 170.71579pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 663--664
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 
  []
 
-<orch.jpg, id=113, 345.54094pt x 264.99pt>
+<orch.jpg, id=122, 345.54094pt x 264.99pt>
 File: orch.jpg Graphic file (type jpg)
  <use orch.jpg>
-Package pdftex.def Info: orch.jpg used on input line 667.
+Package pdftex.def Info: orch.jpg used on input line 738.
 (pdftex.def)             Requested size: 284.53171pt x 227.62413pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21 <./Part_embed.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 684--685
+[23 <./Part_embed.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 755--756
 
  []
 
-<flowchart1.png, id=118, 775.39688pt x 426.09187pt>
+<flowchart1.png, id=126, 775.39688pt x 426.09187pt>
 File: flowchart1.png Graphic file (type png)
  <use flowchart1.png>
-Package pdftex.def Info: flowchart1.png used on input line 689.
+Package pdftex.def Info: flowchart1.png used on input line 760.
 (pdftex.def)             Requested size: 497.9324pt x 312.99496pt.
 
-[22 <./orch.jpg>] [23 <./flowchart1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 705--707
+[24 <./orch.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
+
+ []
+
+<psm1.png, id=131, 581.92406pt x 204.01219pt>
+File: psm1.png Graphic file (type png)
+ <use psm1.png>
+Package pdftex.def Info: psm1.png used on input line 770.
+(pdftex.def)             Requested size: 497.92325pt x 174.56609pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<psm2.png, id=132, 579.66562pt x 185.19188pt>
+File: psm2.png Graphic file (type png)
+ <use psm2.png>
+Package pdftex.def Info: psm2.png used on input line 779.
+(pdftex.def)             Requested size: 497.92325pt x 159.07822pt.
+ [25 <./flowchart1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 784--785
+
+ []
+
+[26 <./psm1.png> <./psm2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 792--794
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 708--710
+Underfull \hbox (badness 10000) in paragraph at lines 795--797
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 711--712
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 758--760
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 791--793
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 845--847
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 824--826
+Underfull \hbox (badness 10000) in paragraph at lines 878--880
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 908--909
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 827--828
+Underfull \hbox (badness 10000) in paragraph at lines 911--913
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 830--831
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
 
  []
 
-[26] <sub_topo.jpg, id=136, 456.95718pt x 264.23718pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 917--918
+
+ []
+
+[29] <sub_topo.jpg, id=152, 456.95718pt x 264.23718pt>
 File: sub_topo.jpg Graphic file (type jpg)
  <use sub_topo.jpg>
-Package pdftex.def Info: sub_topo.jpg used on input line 834.
+Package pdftex.def Info: sub_topo.jpg used on input line 921.
 (pdftex.def)             Requested size: 284.53769pt x 170.71591pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 839--840
+Underfull \hbox (badness 10000) in paragraph at lines 926--927
 
  []
 
-<virt_topo.jpg, id=137, 338.76563pt x 249.93375pt>
+<virt_topo.jpg, id=153, 338.76563pt x 249.93375pt>
 File: virt_topo.jpg Graphic file (type jpg)
  <use virt_topo.jpg>
-Package pdftex.def Info: virt_topo.jpg used on input line 845.
+Package pdftex.def Info: virt_topo.jpg used on input line 932.
 (pdftex.def)             Requested size: 227.62827pt x 142.26921pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 851--852
+Underfull \hbox (badness 10000) in paragraph at lines 938--939
 
  []
 
-<config.jpg, id=138, 473.51906pt x 348.55219pt>
+<config.jpg, id=154, 473.51906pt x 348.55219pt>
 File: config.jpg Graphic file (type jpg)
  <use config.jpg>
-Package pdftex.def Info: config.jpg used on input line 855.
+Package pdftex.def Info: config.jpg used on input line 942.
 (pdftex.def)             Requested size: 369.89972pt x 227.61992pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 860--861
+Underfull \hbox (badness 10000) in paragraph at lines 947--948
 
  []
 
-[27 <./sub_topo.jpg> <./virt_topo.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 874--874
+[30 <./sub_topo.jpg> <./virt_topo.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 961--961
 []\T1/5ch/m/it/9.5 Known nodes=1,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 875--875
+Underfull \hbox (badness 10000) in paragraph at lines 962--962
 []\T1/5ch/m/it/9.5 Known nodes=3,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 881--882
+Underfull \hbox (badness 10000) in paragraph at lines 968--969
 
  []
 
-[28 <./config.jpg>] <embedding.png, id=146, 1014.79124pt x 517.935pt>
+[31 <./config.jpg>] <embedding.png, id=161, 1014.79124pt x 517.935pt>
 File: embedding.png Graphic file (type png)
 
 <use embedding.png>
-Package pdftex.def Info: embedding.png used on input line 887.
+Package pdftex.def Info: embedding.png used on input line 974.
 (pdftex.def)             Requested size: 497.92325pt x 254.13019pt.
- [29 <./embedding.png>]
-<CPU_PE.png, id=151, 329.73187pt x 252.19218pt>
+ [32 <./embedding.png>]
+<CPU_PE.png, id=166, 329.73187pt x 252.19218pt>
 File: CPU_PE.png Graphic file (type png)
  <use CPU_PE.png>
-Package pdftex.def Info: CPU_PE.png used on input line 907.
+Package pdftex.def Info: CPU_PE.png used on input line 994.
 (pdftex.def)             Requested size: 284.52756pt x 217.62373pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 912--913
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
 
  []
 
-<BW_PE.png, id=152, 398.99063pt x 309.40594pt>
+<BW_PE.png, id=167, 398.99063pt x 309.40594pt>
 File: BW_PE.png Graphic file (type png)
  <use BW_PE.png>
-Package pdftex.def Info: BW_PE.png used on input line 917.
+Package pdftex.def Info: BW_PE.png used on input line 1004.
 (pdftex.def)             Requested size: 284.52756pt x 220.6523pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 922--923
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
 
  []
 
-[30 <./CPU_PE.png>] <RES_CON_PE.png, id=157, 526.21594pt x 246.9225pt>
+[33 <./CPU_PE.png>] <RES_CON_PE.png, id=173, 526.21594pt x 246.9225pt>
 File: RES_CON_PE.png Graphic file (type png)
 
 <use RES_CON_PE.png>
-Package pdftex.def Info: RES_CON_PE.png used on input line 926.
+Package pdftex.def Info: RES_CON_PE.png used on input line 1013.
 (pdftex.def)             Requested size: 426.8107pt x 227.6198pt.
- [31 <./BW_PE.png> <./RES_CON_PE.png>] [32] [33]
-(TUDthesis.bbl) [34] (TUDthesis.aux)
+ [34 <./BW_PE.png> <./RES_CON_PE.png>] [35] [36]
+(TUDthesis.bbl) [37] (TUDthesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1576,10 +1633,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9681 strings out of 493328
- 152522 string characters out of 3140849
- 316254 words of memory out of 3000000
- 12926 multiletter control sequences out of 15000+200000
+ 9743 strings out of 493328
+ 153338 string characters out of 3140849
+ 317791 words of memory out of 3000000
+ 12981 multiletter control sequences out of 15000+200000
  72770 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,23n,77p,8890b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1599,9 +1656,9 @@ TeX/2.9/fonts/type1/mathdesign/mdbch/md-chr7y.pfb><C:/Users/sTeve/AppData/Roami
 ng/MiKTeX/2.9/fonts/type1/mathdesign/mdbch/md-chri7m.pfb><C:/Program Files/MiKT
 eX/fonts/type1/adobe/utopia/putri8a.pfb><C:/Users/sTeve/AppData/Roaming/MiKTeX/
 2.9/fonts/type1/urw/arial/ua1r8a.pfb>
-Output written on TUDthesis.pdf (38 pages, 1256047 bytes).
+Output written on TUDthesis.pdf (41 pages, 1307386 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
+ 425 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

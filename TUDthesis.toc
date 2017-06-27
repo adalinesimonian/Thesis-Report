@@ -8,8 +8,9 @@
 \contentsline {subsection}{\numberline {2.3}Integer Linear Programming Approach}{6}
 \contentsline {subsubsection}{\numberline {2.3.1}Co-ordinated Node and Link Mapping:}{6}
 \contentsline {subsubsection}{\numberline {2.3.2}Cross-Domain Embedding}{9}
-\contentsline {subsubsection}{\numberline {2.3.3}Edge Wise Node Mapping (EdWiN)}{10}
-\contentsline {subsubsection}{\numberline {2.3.4}Recursive and Hierarchical Embedding}{15}
-\contentsline {section}{\numberline {3}Approach}{21}
-\contentsline {subsection}{\numberline {3.1}Requirement I: Partial Embedding}{24}
-\contentsline {subsection}{\numberline {3.2}Requirement II: }{33}
+\contentsline {subsubsection}{\numberline {2.3.3}Efficient Inter-Domain Embedding}{11}
+\contentsline {subsubsection}{\numberline {2.3.4}Edge Wise Node Mapping (EdWiN)}{13}
+\contentsline {subsubsection}{\numberline {2.3.5}Recursive and Hierarchical Embedding}{17}
+\contentsline {section}{\numberline {3}Approach}{23}
+\contentsline {subsection}{\numberline {3.1}Requirement I: Partial Embedding}{27}
+\contentsline {subsection}{\numberline {3.2}Requirement II: }{36}
