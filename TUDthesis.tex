@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{enumitem}
 \usepackage{epsfig}
+\usepackage[outdir=./]{epstopdf}
 \newcommand{\getmydate}{%
   \ifcase\month%
     \or Januar\or Februar\or M\"arz%
@@ -39,11 +40,11 @@ Internet has been a huge success with its variety of applications and services c
  
  Alternative solution to the future internet is to accommodate multiple generations of mobile network in a same shared network substrate. This network sharing \cite{nw_sharing} solution although minimize the network cost, but has limitations in the field of network management such as: 1) Traffic isolation: clear separation between multiple networks' traffic. 2) Cross-domain Sharing: to share resources across multiple technology domains. 3) Monitoring: performance of each network needs to be monitored after its creation. 4) Dynamic sharing: automated dynamic resource sharing and 5) Security: Security for each network.\newline 
  
-Designing a new architecture for future carrier networks overcomes the resistance of existing Internet to its architectural changes and is the main need of the time.  Future Carrier Networks (FCN) should be able to scale billions of interconnected devices with thousands of heterogeneous services running on the network. The main challenges of FCNs [2] are to achieve service flexibility in order to adaptively provide a wide range of network services to each customer and to support applications with different levels of network QoS. Other research issues with FCNs include infrastructure sharing, optimal resource utilization and performance guarantees which needs more focus. Several ideas have been proposed to address these research challenges in order to design a new Internet architecture. Figure 1 shows proposed Future Internet Architecture from the book \cite{fcn_arc}. 
+Designing a new architecture for future carrier networks overcomes the resistance of existing Internet to its architectural changes and is the main need of the time. Future Carrier Networks (FCN) should be able to scale billions of interconnected devices with thousands of heterogeneous services running on the network. The main challenges of FCNs [2] are to achieve service flexibility in order to adaptively provide a wide range of network services to each customer and to support applications with different levels of network QoS. Other research issues with FCNs include infrastructure sharing, optimal resource utilization and performance guarantees which needs more focus. Several ideas have been proposed to address these research challenges in order to design a new Internet architecture. Figure 1 shows proposed Future Internet Architecture from the book \cite{fcn_arc}. 
  
   \begin{figure}[h]
  	\centering
- 	\includegraphics[width=16cm]{fcn_arc.jpg}
+ 	\includegraphics[width=16cm]{FCN_arc}
  	\caption{Architecture for Future Internet}
  	\label{fig: Future Network Architecture}
  \end{figure}
@@ -123,7 +124,7 @@ Virtual Network Embedding (VNE) algorithm deals with resource allocation of both
 	\label{fig: VN mapping}
 \end{figure}
 
-As said earlier resource allocation is the main part of VNE algorithms. Typically, every VN mapping comes with restrictions related to the resources. These restrictions should be obeyed by the underlying substrate. For example, if a virtual node request with compute power 'C' units is to be mapped, then the underlying physical node should have at least 'C' units of compute power. Similarly, a virtual link with bandwidth 'B' units cannot be mapped on to substrate link with bandwidth less than 'B' units. These are the basic restrictions that should be considered while embedding, but there can be other restrictions related to economy, profit, type of network services to be hosted etc. If there are more VNs, then the physical resource needs to be reserved for all VNs. This brings up the challenge of optimal resource allocation keeping in mind all the restrictions imposed by the virtual network operators.\newline
+It is well known that, resource allocation is the main part of VNE algorithms. Typically, every VN mapping comes with restrictions related to the resources. These restrictions should be obeyed by the underlying substrate. For example, if a virtual node request with compute power 'C' units is to be mapped, then the underlying physical node should have at least 'C' units of compute power. Similarly, a virtual link with bandwidth 'B' units cannot be mapped on to substrate link with bandwidth less than 'B' units. These are the basic restrictions that should be considered while embedding, but there can be other restrictions related to economy, profit, type of network services to be hosted etc. If there are more VNs, then the physical resource needs to be reserved for all VNs. This brings up the challenge of optimal resource allocation keeping in mind all the restrictions imposed by the virtual network operators.\newline
 
 The other practical challenges for VNE are admission control for VNs. Physical substrate resources are finite and some of the incoming VN requests might get rejected or put in a queue so that resource allocation for existing VN should not be affected. Another real time issue is embedding on-line requests. It needs very less computational effort to allocate resources to a predefined set of VNs as we know the resource demand before embedding. But in real time VN requests arrive dynamically and may stay in the substrate for unknown period of time. It is very difficult to predict resource demands for on-line VNs. Embedding algorithms should be capable of serving each and every VN as they arrive, instead of serving a set of known VN requests at once. Embedding dynamic VNs are difficult because algorithm has very less knowledge about those requests. The main expectation from network virtualization is to support diverse VNs. Serving VNs with arbitrary topologies and with different technologies like different operating system, different routing mechanism might be difficult.\newline
 
@@ -284,18 +285,63 @@ Step 3: Substrate Resource Allocation: If VNP receives success message from all 
  Each substrate and VN are modelled as undirected graph $G^{S} = (N^{S}, L^{S})$ and $G^{V} = (N^{V}, L^{V})$ respectively, where $N^{S}$ is set of substrate nodes, $L^{S}$ is set of substrate links and $N^{V}$ is set of virtual nodes, $L^{V}$ is set of virtual links. Each substrate node $n^{S} \epsilon \; N^{S}$ is associated with its geographic location $g(n^{S})$, its available CPU capacity $C(n^{S})$ and a domain index $dom(n^{S})$ representing the domain it belongs. Each substrate link $l^{S}(u, v) \epsilon \; L^{S}$ between the pair of nodes (u, v) has bandwidth capacity $B(l^{S})$. 
  Let  $p^{S}(m^{S}, n^{S})$ be the set of all possible path from source node $m^{S}$ and destination node $n^{S}$. The available bandwidth of the path $p^{S}$ is given by 
  \begin{equation}
- R(P^{S}) = min_{l^{S}\epsilon p^{S}}B(l^{S})
+ R(P^{S}) = \min_{l^{S}\epsilon p^{S}}B(l^{S})
   \end{equation} 
 Similar to the substrate node, each virtual node $n^{V} \epsilon \; N^{V}$ is associated with its desired location $g(n^{V})$, its CPU demand $C(n^{V})$ and non-negative radius $d^{V}$ representing distance constraint. The capacity demand of each virtual link $l^{V}\epsilon L^{V}$ is denoted by $B(l^{V})$. A candidate set for the virtual node $n^{V} \epsilon N^{S}$ is given by $\theta(n^{V})$ which is a set of all possible substrate nodes that satisfy the distance constraint of the virtual node $n^{V}$. Hence 
 \begin{equation}
 \theta(n^{V}) = \{n^{V} \epsilon N^{S} | dis(g(n^{V}), g(n^{S})) \leq d^{V}\}
 \end{equation}
-Augmented network is given by $G^{A} = (N^{A}, L^{A})$ where $N^{A} = N^{S} \cup N^{V}$ and $L^{A} = L_{vs} \cup L^{ss}$. $L_{vs}$ is a set of inter-domain links and $L^{ss}$ is a set of intra-domain links. Augmented path set is given by $p^{A}(m^{A}, n^{A})$ and available bandwidth for the augmented pth set is given by 
+Augmented network is given by $G^{A} = (N^{A}, L^{A})$ where $N^{A} = N^{S} \cup N^{V}$ and $L^{A} = L_{vs} \cup L^{ss}$. $L_{vs}$ is a set of inter-domain links and $L^{ss}$ is a set of intra-domain links. Augmented path set is given by $p^{A}(m^{A}, n^{A})$ and available bandwidth for the augmented path set is given by 
 \begin{equation}
-R(P^{A}) = min_{l^{A}\epsilon p^{A}}B(l^{A})
+R(P^{A}) = \min_{l^{A}\epsilon p^{A}}B(l^{A})
 \end{equation} 
 
+When a VN request $G^{V}$ arrives at VNP, it pre-locates $G^{V}$ in the augmented network $G^{A}$ for which the VN is decomposed into multiple sub-VN requests. After that each Infp will be assigned with this sub-VN request. So the first phase of VN assignment starts with VNP mapping nodes and links onto the augmented network. Even though the substrate nodes are capable of hosting multiple virtual nodes, only one virtual node per VN request is mapped to one substrate node at a time. Hence node mapping $M_{N} : N^{V} \rightarrow N^{A}\;  \forall n^{V}, m^{V} \epsilon N^{V}$ from virtual nodes to augmented nodes is given by: \newline
+\hspace*{5cm}$M_{N}(n^{V}) \epsilon \;\theta(n^{V})$
+
+\hspace*{5cm}$M_{N}(m^{V}) = M_{N}(n^{V}) \text{, iff } m^{V}=n^{V}$
+
+\hspace*{4cm}subject to 
+
+\hspace*{6cm}$C(n^{V})  \leq C(M_{N}(n^{V}))$ 
+
+Similarly link mapping for every virtual link is given by: \newline 
+\hspace*{5cm} $M_{L} : L^{V} \rightarrow P^{A}$ such that
+
+\hspace*{5cm} $M_{L}(m^{V}, n^{V}) \subseteq P^{A}(M_{N}(m^{V}), M_{N}(n^{V}))$
+
+\hspace*{4cm} subject to
+ 
+\hspace*{5cm} $B(l^{V}) \leq R(P^{A})$
+
+After decomposing VN request each sub-VN request is assigned to every domain i, denoted by $G^{\overline{V}}_{i} = (N^{\overline{V}}_{i}, L^{\overline{V}}_{i})$. VNP has already decided the mapping of each node $n^{\overline{V}} \epsilon \; N^{\overline{V}}_{i}$ on to the substrate node belonging to the domain i. So, the only task for an Infp which owns the domain i is to select the substrate node $n^{S}$ for each $n^{\overline{V}}$ such that \newline
+\hspace*{5cm}$M_{\overline{N}}(n^{\overline{V}}) = n^{S}$
+
+\hspace*{4cm}subject to 
+
+\hspace*{6cm}$dom(n^{S}) = i \text{ and } g(n^{S}) = g(n^{\overline{V}})$ 
+
+The link mapping inside every Infp finds a set of substrate paths and is denoted by $M_{\overline{L}} : L_{i}^{\overline{V}} \rightarrow P^{S}$ such that
+
+\hspace*{5cm} $M_{\overline{L}}(m^{\overline{V}}, n^{\overline{V}}) \subseteq P^{S}(M_{\overline{N}}(m^{\overline{V}}), M_{\overline{N}}(n^{\overline{V}}))$
+
+\hspace*{4cm} subject to
+
+\hspace*{5cm} $B(l^{\overline{V}}) \leq \sum_{P^{S}\epsilon M_{\overline{L}}(l^{\overline{V}})} R(P^{S})$
+
+Embedding of VN request is considered success only if VNP mapping and Infp mapping are successful. Otherwise the embedding for that VN request is considered as failure.
+ 
+
 \end{enumerate}
+
+
+
+
+
+
+
+
+
 
 
 \subsubsection{Edge Wise Node Mapping (EdWiN)} \label{edwin}
@@ -720,22 +766,21 @@ MD domain--------------------End of state of art
 In this section, we present approaches used for solving the problem statement mentioned in the introduction part. All the previous algorithms for multi-operator embedding requires topology and resource information of each underlying operator domains. Knowing operator's topology details or capacity details is very crucial for embedding in multiple domains. Embedding algorithm needs to know minimum details of the participating topologies or resource information for selecting suitable physical resources for every VN request. With all the necessary information about each participating topologies it is easier and less time consuming for an orchestrator to provide an accurate embedding solution. \newline
 
 Current approaches provide embedding solutions by assuming every operator exposes their private topology to the orchestrator entity which runs the embedding algorithm. The problem with such solutions is that in the real world, operators may not want to expose their topology details to any other operators. Many operators are reluctant to share their internal working topology, even in the abstracted form, as the topology details are paramount to to their operational success. The high level topology abstraction, if exposed by the operators, results in inefficient embedding solutions, as the algorithms will fail to calculate anything accurately. With this reluctance of exposing topology details, such solutions are very difficult to implement in the real world.\newline  
-
-Here we propose a solution where operators does not need any information about the topologies of other operators. We propose an architecture where an operator instead of exposing its topology details, shares partial services/VN request that cannot be served by itself to other operators. An operator upon receiving a VN request calculates part of the request it can host and part of the request it cannot embed. Other operators can then evaluate if they are capable of hosting the partial VN request shared by other operator. By this way, an entire VN request can eventually be hosted without the need of topology details from every operator. To support this, we present ILP model where an operator can evaluate from a VN request, the part that it can host and the part that it cannot host.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=14cm, height=6cm]{Part_embed.jpg}
+	\includegraphics[width=15cm, height=7cm]{Part_embed}
 	\caption{Partial Embedding}
 	\label{fig: Partial_Embedding}
 \end{figure}
 
+Here we propose a solution where operators does not need any information about the topologies of other operators. We propose an architecture where an operator instead of exposing its topology details, shares partial services/VN request that cannot be served by itself to other operators. An operator upon receiving a VN request calculates part of the request it can host and part of the request it cannot embed. Other operators can then evaluate if they are capable of hosting the partial VN request shared by other operator. By this way, an entire VN request can eventually be hosted without the need of topology details from every operator. To support this, we present ILP model where an operator can evaluate from a VN request, the part that it can host and the part that it cannot host.\newline
+
 Consider a scenario depicted in the figure .\ref{fig: Partial_Embedding} where the physical domains are abstracted as nodes. In the figure node A represents operators own node which receives virtual network requests from the customer. The main idea of this work is that the operator that receives the request (operator A) must  divide the service request into a part that can be hosted by the operator himself and another that might be hosted by other  operators. The part that cannot be hosted by the operator is exposed in an external database to which other operators can subscribe. Other operators may then internally evaluate if it can support this partial request. If they can then a negotiation procedure may take place to support the entire request. This way none of the operators need to expose their topologies to each other.\newline
 
 As we mentioned earlier, orchestrator should be able to calculate the part of VN request it can serve. The partially non-embedded part of the request may then be sent to an external database which can be accessed by other operators. The other operators can periodically check this database to see whether they can satisfy the request partially or completely. Some cases the external database may belong to third party broker. The following section provides brief picture on the system required to achieve the above mentioned goals. For this we define important components that are essential for every domains participating in the embedding process. The figure (fig .\ref{orch}) represents basic concept behind an orchestrator, that is responsible for managing and serving incoming VN requests. \newline
-
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=10cm, height=8cm]{orch.jpg}
+	\includegraphics[width=10cm, height=7cm]{orch}
 	\caption{Orchestrator A}
 	\label{orch}
 \end{figure}
@@ -750,44 +795,44 @@ The orchestrator has these main components:
 \item Databases: Orchestrator maintains two databases. The first database stores partial VN that succeeded in the local embedding and second stores failed partial VN for further processing. These two databases are crucial for complete embedding of a VN request as they together contain complete details of a VN request.	
 \end{enumerate}
  
-Now let us understand the operation of the orchestrator and its components in detail. The following flow charts(fig .\ref{fl}) explains how an VN request is embedded by sharing its parts between different domains. Consider two orchestrating entities Orchestrator A and Orchestrator B participating in the embedding process. The SRM component of the orchestrator A receives a VN request. The embedding algorithm is applied to this VN request to check whether local embedding is possible, i.e whether the VN can be embedded completely on the orchestrator domain A. If local embedding is possible then embedding is considered successful and orchestrator starts processing the next VN request. In case of failed local embedding, SRM with the help of the algorithm, separates the VN request into partial VN requests. The partial VN request may be part of VN request that failed to embed locally or the whole VN request that also failed to embed locally. In both the cases, partial requests are sent to the pending request manager (PRM) of that orchestrator.
+Now let us understand the operation of the orchestrator and its components in detail. The following flow charts (fig .\ref{fl}) explains how an VN request is embedded by sharing its parts between different domains. Consider two orchestrating entities Orchestrator A and Orchestrator B participating in the embedding process. The SRM component of the orchestrator A receives a VN request. The embedding algorithm is applied to this VN request to check whether local embedding is possible, i.e whether the VN can be embedded completely on the orchestrator domain A. If local embedding is possible then embedding is considered successful and orchestrator starts processing the next VN request. In case of failed local embedding, SRM with the help of the algorithm, separates the VN request into partial VN requests. The partial VN request may be part of VN request that failed to embed locally or the whole VN request that also failed to embed locally. In both the cases, partial requests are sent to the pending request manager (PRM) of that orchestrator.\newline
 
-The PRM component of an orchestrator saves the non-embedded part of VN request into a database which can be accessed by other operators. In order to notify other operators about the saved partial VN, orchestrator can implement a publish/subscribe system or a request crawler which periodically checks other orchestrator's PRM for new partial VN offers. Once the orchestrator B come to know about the partial VN offers, it contacts administrator of the orchestrator A with the corresponding partial VN details. If both orchestrator negotiates on embedding the partial VN request then SRM of orch. B receives the partial VN request. \newline
+The PRM component of an orchestrator saves the non-embedded part of VN request into a database which can be accessed by other operators (fig .\ref{fl}(a)). In order to notify other operators about the saved partial VN, orchestrator can implement a publish/subscribe system or a request crawler which periodically checks other orchestrator's PRM for new partial VN offers. Once the orchestrator B come to know about the partial VN offers, it contacts administrator of the orchestrator A with the corresponding partial VN details. If both orchestrator negotiates on embedding the partial VN request then SRM of orch. B receives the partial VN request. 
 
-After receiving the partial VN request from orch. A, now its orch. B's turn to decide whether it can support the received VN request or not. This is done by running the algorithm in orch. B. If orch. B fails to embed the VN request completely, then the embedding is considered as failure and notified to the orch. A. In this case orch. B now starts looking for new partial VNs. If in case orch. B is able to embed the received partial VN completely then the orch. A is contacted saying the VN request can be embedded completely. Now orc. B has to wait until orch. A agrees for complete embedding. If agreement is reached then embedding procedure is continued in both orchestrator for that VN request, if not orch. B stops serving this request an look for new one.\newline   
+After receiving the partial VN request from orch. A, now its orch. B's turn to decide whether it can support the received VN request or not (fig .\ref{fl}(b)). This is done by running the algorithm in orch. B. If orch. B fails to embed the VN request completely, then the embedding is considered as failure and notified to the orch. A. In this case orch. B now starts looking for new partial VNs. If in case orch. B is able to embed the received partial VN completely then the orch. A is contacted saying the VN request can be embedded completely. Now orc. B has to wait until orch. A agrees for complete embedding. If agreement is reached then embedding procedure is continued in both orchestrator for that VN request, if not orch. B stops serving this request an look for new one.
+
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth, height=11cm]{flowchart1.png}
-	\caption{Operations in detail}
+	\includegraphics[width=\linewidth]{flowchart}
+	\caption{PRM Operations}
 	\label{fl}
 \end{figure}
 
 In the thesis work, we have used publish/subscribe model for the communication between participating operators. The figure (fig .\ref{pub_sub}) depicts an implementation example for the proposed solution. In general PRM is a concept under each orchestrator domain. But in this implementation, PRM is owned by third party broker and it is accessible by every orchestrator. An operator can access other operator's PRM via HTTP-based RESTful interface. PRM implementation follows publish-subscribe model where orchestrators can subscribe for certain categories of request. In our work, for simplicity we have assigned colours for partial VNs, hence type of the colour is considered as a category. For every partial embedding, the operator creates a partial VN request for the part of the request that failed in embedding. This partial VN request is assigned different colours. Once the partial VN request is generated, the corresponding orchestrator will publish a message in the system. All other orchestrators which have subscribed to a particular colour will receive a message in the form of notification, if a partial VN with the corresponding colour is arrived. \newline
 
-Consider a scenario as in fig .\ref{pub_sub} where three Orchestrators A,B and C are participating in the embedding process. A virtual network request arrives at orch. A with five virtual nodes and four virtual links. orch. A runs the embedding algorithm to embed this VN request locally in its domain. The embedding solution allows only two virtual nodes to be embedded in the orch. A domain by splitting VN request into two parts. One part of VN that can be embedded locally (red coloured nodes and links) and other (Green coloured nodes  and links) that cannot. In this case orch. A publishes the partial VN request (Green coloured nodes and links) to its PRM with the category "\#GREEN". As we said earlier, PRM can be accessed by any operator, orch. B and orch. C subscribes to the PRM of orch. A for the category "\#GREEN". Since the subscription matches with the published category of VN request, both orchestrators B and C receives notification from orch. A. The notification includes basic information about the partial VN offer and contact details of the publisher. After receiving the notification both orchestrator B and C contact administrator of orch. A requesting the partial VN details. In response to this, orch. A delivers partial VN with the category "\#GREEN" \text{ to} the orchestators B and C. Also, orchestrators can aggregate all the partial VN offers and publish them at once. The receiving orchestrators can select some or all of the partial VNs based on some optimization criteria.
+Consider a scenario as in fig .\ref{pub_sub} where three Orchestrators A,B and C are participating in the embedding process. A virtual network request arrives at orch. A with five virtual nodes and four virtual links. Orch. A runs the embedding algorithm to embed this VN request locally in its domain. The embedding solution allows only two virtual nodes to be embedded in the orch. A domain by splitting VN request into two parts. One part of VN that can be embedded locally (red coloured nodes and links) and other (Green coloured nodes  and links) that cannot. In this case orch. A publishes the partial VN request (Green coloured nodes and links) to its PRM with the category "\#GREEN". As we said earlier, PRM can be accessed by any operator, orch. B and orch. C subscribes to the PRM of orch. A for the category "\#GREEN". Since the subscription matches with the published category of VN request, both orchestrators B and C receives notification from orch. A. The notification includes basic information about the partial VN offer and contact details of the publisher. After receiving the notification both orchestrator B and C contact administrator of orch. A requesting the partial VN details. In response to this, orch. A delivers partial VN with the category "\#GREEN" \text{ to} the orchestators B and C. Also, orchestrators can aggregate all the partial VN offers and publish them at once. The receiving orchestrators can select some or all of the partial VNs based on some optimization criteria.
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\linewidth]{psm1.png}
+	\includegraphics[width=\linewidth]{psm1}
 	\caption{Publish-Subscribe Model 1}
 	\label{pub_sub}
 \end{figure}
 
-Now at the receiving end of partial VN offers,  the orchestrator's SRM wakes up the system to contact publisher of the partial VN. After negotiating with the publisher, receiving SRM gets complete details of published partial VN offer. SRM runs algorithm to check whether it can locally support the offer in its domain. Figure (fig .\ref{psm2}) below depicts receiving end of the orchestration. Here both orchestrator B and C receive notification. But only the request of orch. C is accepted by the publisher (orch. A). So orch. C sends an embedding offer saying it can embed the partial VN published by orch. A.
-If orch. A accepts the request from orch. C then the embedding procedure is continued together by orch. A and C, which results in complete embedding of that VN request. If only part of partial request is supported by orch. C then the remaining part is jointly published to PRM by orch. A and C.\newline
+Now at the receiving end of partial VN offers,  the orchestrator's SRM wakes up the system to contact publisher of the partial VN. 
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\linewidth]{psm2.png}
+	\includegraphics[width=\linewidth]{psm2}
 	\caption{Publish-Subscribe Model 2}
 	\label{psm2}
 \end{figure}
+After negotiating with the publisher, receiving SRM gets complete details of published partial VN offer. SRM runs algorithm to check whether it can locally support the offer in its domain. Figure (fig .\ref{psm2}) below depicts receiving end of the orchestration. Here both orchestrator B and C receive notification. But only the request of orch. C is accepted by the publisher (orch. A). So orch. C sends an embedding offer saying it can embed the partial VN published by orch. A.
+If orch. A accepts the request from orch. C then the embedding procedure is continued together by orch. A and C, which results in complete embedding of that VN request. If only part of partial request is supported by orch. C then the remaining part is jointly published to PRM by orch. A and C.
 
 There might be more than one orchestrator that receives the same partial VN offer, in which case, all those orchestrators send embedding requests to the publisher. Multiple offers are queued up in the PRM and it depends on the publishing orchestrator to select one of the requests from the PRM (option A) based on optimization criteria. Embedding offer can be sent via PRM directly (optin B) to the requester also. By this way a VN request can be successfully embedded across multiple domains.\newline
 
-
-
 Now we have an overview of embedding process with the help of orchestrator components and pub-sub system. The implementation of the above explained concepts require three main tasks. At first we need to implement embedding algorithm for partial embedding that is able to calculate part of VN that can be embedded locally in operators own domain. We need a communication system between operators for sharing the partial VNs and offers. At last we need a orchestrator that can manage embedding a complete VN request across multiple operator domains. The following sections provides complete details on implementation phase of these three tasks. The tasks also fulfil the requirements of the thesis work mentioned in the introduction part.
 
-\newpage
 \subsection{Requirement I: Partial Embedding}
 At first we present the approach for embedding partial services on the physical substrate. To do this, we model an MILP for operator A considering
 another operator's topology as a pseudo node with infinite resource. In such scenario, operator A considers other nodes as infinite nodes that can host any number of VNs because they have infinite physical resources. Based on such a model and the knowledge of cost of hosting the other operators, our MILP can try to minimize the total cost of hosting the service over this entire modelled graph. The solution to the MILP results in a proposition of the parts of the VN that need to be placed in Operators A’s network and the parts that cannot be hosted by operator A. The latter part may then be exposed to other operators for evaluation. Therefore instead of exposing individual topology details, operator A exposes the partial VN request. With this approach, operators need not to expose their topology details to others. \newline
@@ -800,133 +845,128 @@ Self Topology Abstraction: As explained earlier, the domain is itself represente
 Since we use the same basic model presented in the work EdWiN, most of the formulation remains same. Also, we use the concept of abstracting physical nodes and interfaces that we defined in \cite{7116141}. At first, we present basic graph model for physical network and virtual network request which is modified to support partial embedding. Following this, modified formulation for resource constraints and goal function is presented. Hence we consider:
 
 \begin{enumerate}[label=(\Alph*)]
-\item  Basic Model: As defined in EdWiN project, same graph model is used here for both physical network and virtual network request i.e a graph $G= (V, E)$ where 'V' is a set of vertices and 'E' is a set of edges connecting those vertices. Therefore, physical substrate is represented as a graph $G^{S} = (V^{S}, E^{S})$ and virtual request as $G^{V}_{g} = (V^{V}_{g}, E^{V}_{g})$. The physical substrate consists of 'N' number of domains (pseudo nodes and infinite nodes) represented as $V^{S} = \{n_{1},n_{2}...n_{N}\}$. Without loss of generality say for $i = 1...N_{known}$ represent pseudo nodes where the capacity values are known while for $i = N_{known} + 1$ represent infinite nodes. 
-
-\item A price 'p' associated with embedding each of these sub-graphs into physical substrate, which brings in $p_{g}$ price for embedding g-th request.
-
-\item $\mu_{i}^{C}$ is the factor for cost of embedding compute resource in a domain 'i'. Similarly $\mu_{i}^{B}$ is the cost for internal bandwidth allocation in every i-th domain.
-
-\begin{enumerate}
-\item Each physical substrate node $n_{i}$ where $i \epsilon \{1...N\}$ has $I_{i}$ interfaces. Each interface for a node $n_{i}$ is defined as $n_{i_{p}}$ with $p \epsilon \{1...I_{i}\}$. 
-
-\item we formulate link as $\{e_{i_{p}j_{q}} = \{ n_{i_{p}}, n_{j_{q}}\}  \}$ where the link exists between p-th interface of node 'i' and q-th interface of node 'j'. An interface can only be associated to a single link resulting in a maximum of $L \leq N(N-1)$ edges. 
-
-\item Node capacity matrices, for instance: CPU matrix $[ C_{i}]_{i = 1...N}$, where $C_{i} \ge 0 \; \forall i\epsilon \; \{1...N\}$. Identical matrices and equations can be created for other node resources such as storage and memory. 
-
-\item Link capacity matrix $B_{c} = [B_{c_{i_{p}j_{q}}}]$, $ i, j \epsilon \; \{1...N\}$, $ p \epsilon \; \{1...I_{i}\}$, $ q \epsilon \; \{1...I_{i}\}$, where $ B_{c_{i_{p}j_{q}}} \geq 0  \; \forall  i, j \epsilon \; \{1...N\}; e_{i_{p}j_{q}} $ has capacity $B_{c_{ij}}$; We assume $G^{P}$ is an undirected graph, thus $B_{c_{i_{p}j_{q}}} = B_{c_{j_{q}i_{p}}}$. This has no significant impact on the formulation as the directional bandwidth would only introduce one equation in each direction. Note that $B_{i_{p}j_{q}}$ represents the bandwidth available between interfaces p and q belonging to node $n_{i}$.
-\end{enumerate}
-
-\item Virtual Request Model:
-
-VN requests are resolved one by one by embedding G VN requests, $G^{V}_{g} = (V^{V}_{g}, E^{V}_{g})$. We split each VN request $g \epsilon \{1...G\}$ link wise into $g_{k}$ 2-node sub-graphs. The k-th sub-graph, $k \epsilon \{1..g_{k}\}$, of the g-th virtual network is characterized by:
-\begin{enumerate}
-\item Source and Destination nodes  \textit{$v_{s_{g_{k}}}$} and \textit{$v_{d_{g_{k}}}$} with capacity requirements \textit{$C_{s_{g_{k}}}$}, \textit{$S_{s_{g_{k}}}$} and \textit{$C_{d_{g_{k}}}$}, \textit{$S_{d_{g_{k}}}$} respectively.
-\item The requested directional bandwidth \textit{$b_{g_{k}}$}
-\item  Boolean variables
-\begin{equation}
-\begin{split}
-y_{s_{g_{k}}}^{i}=
-\begin{cases}
-1, & \text{if } n_{s_{g_{k}}}\rightarrow n_{i} \\
-0, & \text{if } n_{s_{g_{k}}}\not\rightarrow n_{i} \\
-\end{cases}\\
-y_{d_{g_{k}}}^{i}=
-\begin{cases}
-1, & \text{if } n_{d_{g_{k}}}\rightarrow n_{i} \\
-0, & \text{if } n_{d_{g_{k}}} \not\rightarrow n_{i} \\
-\end{cases}
-\end{split}
-\end{equation}
-where a $\rightarrow$ b implies \textit{a} is embedded in \textit{b} in the solution.
-
-\item The embedding solution for a virtual link is defined by the boolean variable $x_{i_{p}j_{q}}^{g_{k}}$, identifying if bandwidth is allocated on the physical link $l_{i_{p}j_{q}}$ for the k-th sub-graph of the g-th virtual network request. Therefore, 
-\begin{equation}
-x_{i_{p}j_{q}}^{g_{k}} \epsilon \{0, 1\} \;\forall i, j \;\epsilon\; \{1...N\}; p \epsilon \; \{1...I_{i}\}; q \epsilon \; \{1...I_{j}\}\\
-\end{equation}
-where $x_{i_{p}j_{q}}^{g_{k}} = 0, \; \forall i \;\epsilon\; \{1...N\}; p \epsilon \; \{1...I_{i}\}$\newline
-\item Furthermore, allocation of any bandwidth between any pair of interfaces on the same node $n_{i}$ results in a compute resource consumption $\{C^{i}_{through}\}$ is defined same as the equation Eq. \ref{c-i-through}. Similar equation for storage and memory requirement can be formulated. $\beta$ determines the influence of allocated link through bandwidth in the resource of the node it passes through. Typical $\beta$ values for currently available high end router slots can be calculated by assuming that the maximum switching capacity of the slot uses all the resource available therein. Then the ratio of the maximum switching capacity to the maximum supported link bandwidth gives us a good estimate of $\beta$.
-
-\item 	Finally the whole VN request  $G_{g}^{V}, \; \forall g \;\epsilon\; \{1...G\}$, is characterizes by a boolean variable:
-\begin{equation}
-y_{g}=
-\begin{cases}
-1, & \text{if }   G_{g}^{V}\rightarrow G^{P} \\
-0, & \text{if }   G_{g}^{V}\not\rightarrow G^{P} \\
-\end{cases}
-\end{equation}
-
-Intra-node bandwidth model: We are using 'Independent Bandwidth Model' where, between each pair of interfaces in any node i, there is a bandwidth $B_{i_{p}j_{q}}$ that is independent of the consumption between any other pair of resources. Therefore assuming the bandwidth consumption in both directions equally
-\begin{equation}
-B_{i_{p}j_{q}}^{Available} = B_{i_{p}j_{q}}^{total} -  \sum_{g=1}^{G} \sum_{k=1}^{k_{g}}  \{ x_{i_{p}j_{q}}^{g_{k}} + x_{i_{q}j_{p}}^{g_{k}}\}
-\end{equation}
-\end{enumerate}
-
-\item Constraints:
-
-The constraints for the resource allocation are applied only to the known nodes. As infinite nodes are assumed to have infinite resources, these constraints are not applicable to them that is for $i \geq N_{known} + 1$. Hence the previous equation for bandwidth constraint (Eq. \ref{bw_cons}) can be modified as:
-\begin{equation}  
-\begin{split}
-\sum_{g=1}^{G} \sum_{k=1}^{k_{g}} b_{g_{k}} \big(x_{i_{p}j_{q}}^{g_{k}} + x_{j_{q}i_{p}}^{g_{k}}\big) \leq B_{i_{p}j_{q}} \text{ if } i \leq N_{known} \text{ OR } j \leq N_{known}
-\end{split}
-\end{equation} 
-
-For the capacity constraints at the nodes, Eq. \ref{cpu_cons} can be modified as: 
-\begin{equation}  \label{part_cons}
-\begin{split}
-\sum_{g=1}^{G} \sum_{k=1}^{K_{g}} \big( C_{s_{gk}} U_{s_{gk}}  y^{i}_{s_{gk}} +  C_{d_{gk}} U_{d_{gk}} y^{i}_{d_{gk}} \big) + C_{internal}^{i} + C_{through}^{i} \leq C_{i} \;\;\; \forall i \leq N_{known}
-\end{split}
-\end{equation} 
-where \newline
-
-$U_{s_{gk}} = \begin{cases}
-0, & \text{if }  \exists k' < k: v_{s_{gk}} \equiv v_{s_{k'g}} \text{or } v_{s_{gk}} \equiv v_{d_{k'g}} \\
-1, & \text{ otherwise} \\
-\end{cases}$	
-
-$U_{d_{gk}} = \begin{cases}
-0, & \text{if }  \exists k' < k: v_{d_{gk}} \equiv v_{s_{k'g}} \text{or } v_{d_{gk}} \equiv v_{d_{k'g}} \\
-1, & \text{ otherwise} \\
-\end{cases}$	
-
-
-where 'v' represents virtual node and $\equiv$ means "is same as". And the parameters $U_{*_{gk}}$ avoids same virtual node to act as source and destination node for different 'k' sub-graphs. Equation similar to Eq .\ref{part_cons} can be derived for other resources like memory and storage.  
-\item Topology and Embedding Constraints: 
-
-Formulation for topology and embedding constraints remains same as defined in the previous work (\ref{md_monitoring}). Hence the equations Eq .\ref{tec} to Eq .\ref{tec1} remains same and is used in the thesis work as it is.
-
-
-\item Goal Function:
-
-The goal is to maximize the profit for the operators own domain and to minimize the resource utilization in the infinite nodes. as the cost of embedding is higher in the infinite nodes. Therefore goal function is formulated as:
-
-\begin{equation} \label{part_enb_goal}
-\begin{aligned}
-\sum_{g=1}^{G} p_{g} y_{g} &- \sum_{g=1}^{G} \sum_{k=1}^{K_{g}}  \sum_{i=1}^{N} \sum_{p=1}^{I_{i}} \sum_{\substack{j=1 \\ j\neq i}}^{N} \sum_{q=1}^{I_{j}} \mu^{B}_{i_{p}j_{q}} b_{g_{k}} x^{g_{k}}_{i_{p}j_{q}}\\ &- (1+\gamma/\beta) \sum_{g=1}^{G} \sum_{k=1}^{K_{g}}  \sum_{i=1}^{N} \sum_{p=1}^{I_{i}} \sum_{q=1}^{I_{i}}  \mu^{B}_{i} b_{g_{k}}  x^{g_{k}}_{i_{p}i_{q}}\\ &- \gamma/\alpha \sum_{g=1}^{G} \sum_{k=1}^{K_{g}}  \sum_{i=1}^{N}  \mu^{B}_{i} b_{g_{k}} z_{g_{k}}^{i} \\ &- \sum_{i=1}^{N} \sum_{g=1}^{G} \sum_{k=1}^{K_{g}} \mu^{C}_{i}  \big( C_{s_{gk}} U_{s_{gk}}  y^{i}_{s_{gk}} +  C_{d_{gk}} U_{d_{gk}} y^{i}_{d_{gk}} \big) + C_{internal}^{i} + C_{through}^{i}
-\end{aligned}
-\end{equation}
+	\item  Basic Model: As defined in EdWiN project, same graph model is used here for both physical network and virtual network request i.e a graph $G= (V, E)$ where 'V' is a set of vertices and 'E' is a set of edges connecting those vertices. Therefore, physical substrate is represented as a graph $G^{S} = (V^{S}, E^{S})$ and virtual request as $G^{V}_{g} = (V^{V}_{g}, E^{V}_{g})$. The physical substrate consists of 'N' number of domains (pseudo nodes and infinite nodes) represented as $V^{S} = \{n_{1},n_{2}...n_{N}\}$. Without loss of generality say for $i = 1...N_{known}$ represent pseudo nodes where the capacity values are known while for $i = N_{known} + 1$ represent infinite nodes. 
+	
+	\item A price 'p' associated with embedding each of these sub-graphs into physical substrate, which brings in $p_{g}$ price for embedding g-th request.
+	
+	\item $\mu_{i}^{C}$ is the factor for cost of embedding compute resource in a domain 'i'. Similarly $\mu_{i}^{B}$ is the cost for internal bandwidth allocation in every i-th domain.
+	
+	\begin{enumerate}
+		\item Each physical substrate node $n_{i}$ where $i \epsilon \{1...N\}$ has $I_{i}$ interfaces. Each interface for a node $n_{i}$ is defined as $n_{i_{p}}$ with $p \epsilon \{1...I_{i}\}$. 
+		
+		\item we formulate link as $\{e_{i_{p}j_{q}} = \{ n_{i_{p}}, n_{j_{q}}\}  \}$ where the link exists between p-th interface of node 'i' and q-th interface of node 'j'. An interface can only be associated to a single link resulting in a maximum of $L \leq N(N-1)$ edges. 
+		
+		\item Node capacity matrices, for instance: CPU matrix $[ C_{i}]_{i = 1...N}$, where $C_{i} \ge 0 \; \forall i\epsilon \; \{1...N\}$. Identical matrices and equations can be created for other node resources such as storage and memory. 
+		
+		\item Link capacity matrix $B_{c} = [B_{c_{i_{p}j_{q}}}]$, $ i, j \epsilon \; \{1...N\}$, $ p \epsilon \; \{1...I_{i}\}$, $ q \epsilon \; \{1...I_{i}\}$, where $ B_{c_{i_{p}j_{q}}} \geq 0  \; \forall  i, j \epsilon \; \{1...N\}; e_{i_{p}j_{q}} $ has capacity $B_{c_{ij}}$; We assume $G^{P}$ is an undirected graph, thus $B_{c_{i_{p}j_{q}}} = B_{c_{j_{q}i_{p}}}$. This has no significant impact on the formulation as the directional bandwidth would only introduce one equation in each direction. Note that $B_{i_{p}j_{q}}$ represents the bandwidth available between interfaces p and q belonging to node $n_{i}$.
+	\end{enumerate}
+	
+	\item Virtual Request Model:
+	
+	VN requests are resolved one by one by embedding G VN requests, $G^{V}_{g} = (V^{V}_{g}, E^{V}_{g})$. We split each VN request $g \epsilon \{1...G\}$ link wise into $g_{k}$ 2-node sub-graphs. The k-th sub-graph, $k \epsilon \{1..g_{k}\}$, of the g-th virtual network is characterized by:
+	\begin{enumerate}
+		\item Source and Destination nodes  \textit{$v_{s_{g_{k}}}$} and \textit{$v_{d_{g_{k}}}$} with capacity requirements \textit{$C_{s_{g_{k}}}$}, \textit{$S_{s_{g_{k}}}$} and \textit{$C_{d_{g_{k}}}$}, \textit{$S_{d_{g_{k}}}$} respectively.
+		\item The requested directional bandwidth \textit{$b_{g_{k}}$}
+		\item  Boolean variables
+		\begin{equation}
+		\begin{split}
+		y_{s_{g_{k}}}^{i}=
+		\begin{cases}
+		1, & \text{if } n_{s_{g_{k}}}\rightarrow n_{i} \\
+		0, & \text{if } n_{s_{g_{k}}}\not\rightarrow n_{i} \\
+		\end{cases}\\
+		y_{d_{g_{k}}}^{i}=
+		\begin{cases}
+		1, & \text{if } n_{d_{g_{k}}}\rightarrow n_{i} \\
+		0, & \text{if } n_{d_{g_{k}}} \not\rightarrow n_{i} \\
+		\end{cases}
+		\end{split}
+		\end{equation}
+		where a $\rightarrow$ b implies \textit{a} is embedded in \textit{b} in the solution.
+		
+		\item The embedding solution for a virtual link is defined by the boolean variable $x_{i_{p}j_{q}}^{g_{k}}$, identifying if bandwidth is allocated on the physical link $l_{i_{p}j_{q}}$ for the k-th sub-graph of the g-th virtual network request. Therefore, 
+		\begin{equation}
+		x_{i_{p}j_{q}}^{g_{k}} \epsilon \{0, 1\} \;\forall i, j \;\epsilon\; \{1...N\}; p \epsilon \; \{1...I_{i}\}; q \epsilon \; \{1...I_{j}\}\\
+		\end{equation}
+		where $x_{i_{p}j_{q}}^{g_{k}} = 0, \; \forall i \;\epsilon\; \{1...N\}; p \epsilon \; \{1...I_{i}\}$\newline
+		\item Furthermore, allocation of any bandwidth between any pair of interfaces on the same node $n_{i}$ results in a compute resource consumption $\{C^{i}_{through}\}$ is defined same as the equation Eq. \ref{c-i-through}. Similar equation for storage and memory requirement can be formulated. $\beta$ determines the influence of allocated link through bandwidth in the resource of the node it passes through. Typical $\beta$ values for currently available high end router slots can be calculated by assuming that the maximum switching capacity of the slot uses all the resource available therein. Then the ratio of the maximum switching capacity to the maximum supported link bandwidth gives us a good estimate of $\beta$.
+		
+		\item 	Finally the whole VN request  $G_{g}^{V}, \; \forall g \;\epsilon\; \{1...G\}$, is characterizes by a boolean variable:
+		\begin{equation}
+		y_{g}=
+		\begin{cases}
+		1, & \text{if }   G_{g}^{V}\rightarrow G^{P} \\
+		0, & \text{if }   G_{g}^{V}\not\rightarrow G^{P} \\
+		\end{cases}
+		\end{equation}
+		
+		Intra-node bandwidth model: We are using 'Independent Bandwidth Model' where, between each pair of interfaces in any node i, there is a bandwidth $B_{i_{p}j_{q}}$ that is independent of the consumption between any other pair of resources. Therefore assuming the bandwidth consumption in both directions equally
+		\begin{equation}
+		B_{i_{p}j_{q}}^{Available} = B_{i_{p}j_{q}}^{total} -  \sum_{g=1}^{G} \sum_{k=1}^{k_{g}}  \{ x_{i_{p}j_{q}}^{g_{k}} + x_{i_{q}j_{p}}^{g_{k}}\}
+		\end{equation}
+	\end{enumerate}
+	
+	\item Constraints:
+	
+	The constraints for the resource allocation are applied only to the known nodes. As infinite nodes are assumed to have infinite resources, these constraints are not applicable to them that is for $i \geq N_{known} + 1$. Hence the previous equation for bandwidth constraint (Eq. \ref{bw_cons}) can be modified as:
+	\begin{equation}  
+	\begin{split}
+	\sum_{g=1}^{G} \sum_{k=1}^{k_{g}} b_{g_{k}} \big(x_{i_{p}j_{q}}^{g_{k}} + x_{j_{q}i_{p}}^{g_{k}}\big) \leq B_{i_{p}j_{q}} \text{ if } i \leq N_{known} \text{ OR } j \leq N_{known}
+	\end{split}
+	\end{equation} 
+	
+	For the capacity constraints at the nodes, Eq. \ref{cpu_cons} can be modified as: 
+	\begin{equation}  \label{part_cons}
+	\begin{split}
+	\sum_{g=1}^{G} \sum_{k=1}^{K_{g}} \big( C_{s_{gk}} U_{s_{gk}}  y^{i}_{s_{gk}} +  C_{d_{gk}} U_{d_{gk}} y^{i}_{d_{gk}} \big) + C_{internal}^{i} + C_{through}^{i} \leq C_{i} \;\;\; \forall i \leq N_{known}
+	\end{split}
+	\end{equation} 
+	where \newline
+	
+	$U_{s_{gk}} = \begin{cases}
+	0, & \text{if }  \exists k' < k: v_{s_{gk}} \equiv v_{s_{k'g}} \text{or } v_{s_{gk}} \equiv v_{d_{k'g}} \\
+	1, & \text{ otherwise} \\
+	\end{cases}$	
+	
+	$U_{d_{gk}} = \begin{cases}
+	0, & \text{if }  \exists k' < k: v_{d_{gk}} \equiv v_{s_{k'g}} \text{or } v_{d_{gk}} \equiv v_{d_{k'g}} \\
+	1, & \text{ otherwise} \\
+	\end{cases}$	
+	
+	
+	where 'v' represents virtual node and $\equiv$ means "is same as". And the parameters $U_{*_{gk}}$ avoids same virtual node to act as source and destination node for different 'k' sub-graphs. Equation similar to Eq .\ref{part_cons} can be derived for other resources like memory and storage.  
+	\item Topology and Embedding Constraints: 
+	
+	Formulation for topology and embedding constraints remains same as defined in the previous work (\ref{md_monitoring}). Hence the equations Eq .\ref{tec} to Eq .\ref{tec1} remains same and is used in the thesis work as it is.
+	
+	\item Goal Function:
+	
+	The goal is to maximize the profit for the operators own domain and to minimize the resource utilization in the infinite nodes. as the cost of embedding is higher in the infinite nodes. Therefore goal function is formulated as:
+	\begin{equation} \label{part_enb_goal}
+	\begin{aligned}
+	\sum_{g=1}^{G} p_{g} y_{g} &- \sum_{g=1}^{G} \sum_{k=1}^{K_{g}}  \sum_{i=1}^{N} \sum_{p=1}^{I_{i}} \sum_{\substack{j=1 \\ j\neq i}}^{N} \sum_{q=1}^{I_{j}} \mu^{B}_{i_{p}j_{q}} b_{g_{k}} x^{g_{k}}_{i_{p}j_{q}}\\ &- (1+\gamma/\beta) \sum_{g=1}^{G} \sum_{k=1}^{K_{g}}  \sum_{i=1}^{N} \sum_{p=1}^{I_{i}} \sum_{q=1}^{I_{i}}  \mu^{B}_{i} b_{g_{k}}  x^{g_{k}}_{i_{p}i_{q}}\\ &- \gamma/\alpha \sum_{g=1}^{G} \sum_{k=1}^{K_{g}}  \sum_{i=1}^{N}  \mu^{B}_{i} b_{g_{k}} z_{g_{k}}^{i} \\ &- \sum_{i=1}^{N} \sum_{g=1}^{G} \sum_{k=1}^{K_{g}} \mu^{C}_{i}  \big( C_{s_{gk}} U_{s_{gk}}  y^{i}_{s_{gk}} +  C_{d_{gk}} U_{d_{gk}} y^{i}_{d_{gk}} \big) + C_{internal}^{i} + C_{through}^{i}
+	\end{aligned}
+	\end{equation}
 \end{enumerate}
 where $\gamma = \frac{\text{percentage of free links in substrate}}{\text{percentage of free node resources in substrate}}$ \newline
-
 
 \hspace*{2cm} The first term ensures that the embedding succeeds with maximized profit for operator's own domain. The variable '$p_{g}$' represents the price for each 'g' VN requests. The rest of the term tries to minimize resource consumption related to the allocation of bandwidth. CPU resources are not considered as they are used in a fixed amount in every request if it were to succeed. The second term tries to minimize the consumption of bandwidth on the link connecting two different physical domains. The bandwidth cost $\mu_{i}^{B}$ associated with each domain 'i' also determines the solution for each VN request. Similarly the third term tries to minimize amount of internal bandwidth allocated to virtual links inside a physical domain. The "1" from the co-efficient $(1+\gamma/\beta)$ represents inter-node bandwidth used while $\beta$ in $\gamma/\beta$ stands for compute resource used. And $\gamma$ is used to balance the utilization of links vs nodes while embedding links. The last term is used to minimize the compute
 resources used while embedding links into nodes. The fourth term tries to minimize the compute resource used while embedding links into nodes. And the last term tries to minimize the compute power used for the virtual nodes while mapping onto physical node.\newline
 
 The following section presents details on the experiment set up and in house simulation tool used to implement the proposed algorithm. After that, we present details on the results gathered for the partial embedding process. \newline
 
-
 Simulations were executed on a server by solving MIP formulation using the Gurobi library running in Java on 4 cores. A fixed substrate topology with 4 different operators is created as shown in the figure \ref{sub_topo}. In this topology, one node is made as a known node (operator's own node) and other nodes as unknown nodes (infinite nodes). Substrate topology has two layers with first layer having inter-operator topology. This layer includes $N_{operator}$ pseudo nodes abstracting the the operators. The second layer is a intra-operator topology consisting of 'N' number of nodes in each pseudo-node or operator domain. Both inter-domain and intra-domain topologies are randomly generated with random resources and random connection between the pseudo nodes. In intra-operator topology, initially each node has random node capacity generated between 50 and 100 units. Link capacity is randomly generated and uniformly distributed between 50 and 100 units. For each operator node (pseudo-node), available node capacity is equal to the summation of the capacity of the node it contains. \newline
+
+In the figure (fig .\ref{sub_topo}) the rectangular boxes represent nodes and the lines represent links connecting different nodes (domains/operators). The node (node Id: 3741663) with dark shade is known node and others (node Ids: 3741664, 3741665, 4281031) are infinite node. Known nodes have finite number of resources, for instance, the known node here has 70 CPU units, 91 memory and 51 storage units. The overall bandwidth capacity of the known node is 320 units. But the infinite nodes have infinite resources with CPU, storage and memory as 100000 units. The external link connecting two pseudo nodes, out of which if one is infinite node, have infinite bandwidth resource. Since we have configured 2 digit numbers for VN resources (CPU, memory, storage), 100000 units is considered as infinite resources. 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=10cm, height=6cm]{sub_topo.jpg}
+	\includegraphics[width=12cm, height=8cm]{sub_topo.jpg}
 	\caption{Substrate Topology}
 	\label{sub_topo}
 \end{figure}
 
-In the figure (fig .\ref{sub_topo}) the rectangular boxes represent nodes and the lines represent links connecting different nodes (domains/operators). The node (node Id: 3741663) with dark shade is known node and others (node Ids: 3741664, 3741665, 4281031) are infinite node. Known nodes have finite number of resources, for instance, the known node here has 70 CPU units, 91 memory and 51 storage units. The overall bandwidth capacity of the known node is 320 units. But the infinite nodes have infinite resources with CPU, storage and memory as 100000 units. The external link connecting two pseudo nodes, out of which if one is infinite node, have infinite bandwidth resource. Since we have configured 2 digit numbers for VN resources (CPU, memory, storage), 100000 units is considered as infinite resources. \newline
-
-VN are created by generating virtual network with four virtual nodes as shown in the figure \ref{virt_topo}. The capacity requirements of the virtual nodes and links are integer numbers randomly generated and uniformly distributed, respectively in the range 1 to 100xVNF (Virtual Node Factor) units and 1 to 100xVLF (Virtual Link Factor) units, where VNF, VLF $\epsilon (0, 1)$ are the simulation parameters that define the ease for incorporating virtual nodes in physical nodes and virtual links in physical links. 
-
+VN are created by generating virtual network with four virtual nodes as shown in the figure \ref{virt_topo}. The capacity requirements of the virtual nodes and links are integer numbers randomly generated and uniformly distributed, respectively in the range 1 to 100xVNF (Virtual Node Factor) units and 1 to 100xVLF (Virtual Link Factor) units, where VNF, VLF $\epsilon (0, 1)$ are the simulation parameters that define the ease for incorporating virtual nodes in physical nodes and virtual links in physical links. \newline
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=8cm, height=5cm]{virt_topo.jpg}
@@ -934,9 +974,7 @@ VN are created by generating virtual network with four virtual nodes as shown in
 	\label{virt_topo}
 \end{figure}
 
-
-The following section provides the details on configuring the orchestrator part. Most of the variables defined the formulation are assigned values in this configuration part. A simple GUI is designed to accept values for different variables and provide a visual screens with controls to understand embedding of each VN request.\newline
-
+The following section provides the details on configuring the orchestrator part. Most of the variables defined the formulation are assigned values in this configuration part. A simple GUI is designed to accept values for different variables and provide a visual screens with controls to understand embedding of each VN request.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=13cm, height=8cm]{config.jpg}
@@ -978,11 +1016,11 @@ The figure below (Figure .\ref{Partial_embedding}) depicts embedding process wit
 
 This fulfils our first requirement of partial embedding. Now our algorithm is able to decide how many virtual nodes and links can be embedded on the known node and how many cannot, from a single VN request. There are other scenarios where the whole VN request can be embedded in one single known node and whole VN request fails to embed on the known node. Most of the previous algorithms did not allow partial embedding,stating whole VN request fails if any of its nodes and links cannot be embedded. The embedding solution here depends mainly on the embedding cost of different pseudo nodes. This brings in three cases where:
 \begin{enumerate}
-\item Embedding cost in Known nodes are cheaper than embedding in infinite nodes: In this case the orchestrator embeds most of the virtual networks in known nodes. After some time VN request gets split between the domains based on the objective set in the goal function. The resources of infinite nodes are used when the known nodes does not have sufficient amount of resources to serve.
+	\item Embedding cost in Known nodes are cheaper than embedding in infinite nodes: In this case the orchestrator embeds most of the virtual networks in known nodes. After some time VN request gets split between the domains based on the objective set in the goal function. The resources of infinite nodes are used when the known nodes does not have sufficient amount of resources to serve.
 	
-\item  Embedding cost in Known nodes are costlier than embedding in infinite nodes: In this case all of the VN requests are embedded only in infinite nodes. None of the request fails because infinite nodes have infinite resource which can serve any number of VN request with any type of resource demands.
-
-\item Cost of embedding in Known nodes and infinite nodes are same: Here VN request is embedded on any domain which has sufficient amount of resources for the VN request. 
+	\item  Embedding cost in Known nodes are costlier than embedding in infinite nodes: In this case all of the VN requests are embedded only in infinite nodes. None of the request fails because infinite nodes have infinite resource which can serve any number of VN request with any type of resource demands.
+	
+	\item Cost of embedding in Known nodes and infinite nodes are same: Here VN request is embedded on any domain which has sufficient amount of resources for the VN request. 
 \end{enumerate}
 
 Results: 
@@ -1021,9 +1059,6 @@ The remaining two plots represents resource availability in known nodes after se
 Starting from partial vn from algo output- nodes links scenarios (few nodes , all nodes of a request), creating partial VN in vnffg format, inserting in db with db script, db pics. why two tables, 
 Pub/sub system as per patent----till next page..
 after that my work of pub sub and pub sub notif. selecting the peer pip all till page 10.
-
-
-
  
 \newpage
 \bibliography{biblography} 
