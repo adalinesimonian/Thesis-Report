@@ -202,11 +202,11 @@ Heuristic and coordinated link and node mapping approaches introduced VN provisi
 
 Embedding VNs in single substrate is often non-realistic in today's world of increased number of internet users and its services. Embedding across multiple domains are more practical because, for one substrate it is almost impossible to manage an entire virtual network end-to-end. Inter-domain (cross-domain) embedding provides the service providers, a low cost end-to-end services which in turn decreases the cost of  internet services to the end users. Different internet services have different requirements like data transmission across geographically separated networks. Such services require VNs across multiple domains. But inter-domain embedding comes with the cost of knowing topology information of all the underlying domains which is another challenge addressed in the recent research .\newline
 
-Mapping VNs over multiple physical substrates arises one important question. That is, how to split VN request over the substrates while reducing the cost for infrastructure providers (infps). Author in \cite{vn_multiple} introduces algorithm, which is first of its kind, for mapping VNs over multiple substrates. Splitting VNs is solved using both heuristic and Linear programming method. Also algorithm to simultaneously map virtual links and virtual nodes is presented. VNE problem is formulated by considering the participants: infrastructure provider (infp) and VN provider. Mapping VNs over multiple physical substrates is performed in three steps, 1) Resource matching 2) Embedding and 3) Binding. infp must publish its resource details to VN providers and when a VN provider receives VN request, identify suitable substrates based on the resource information exposed by every infp. VN provider must split the VN request to match against each infp at a high level of abstraction. Each single infp will embed the virtual node and virtual link on the appropriate substrate node and substrate link identified in matching phase. The following section explains the three steps (matching, embedding, binding) in details.\newline
+Mapping VNs over multiple physical substrates arises one important question. That is, how to split VN request over the substrates while reducing the cost for infrastructure providers (Infps). Author in \cite{vn_multiple} introduces algorithm, which is first of its kind, for mapping VNs over multiple substrates. Splitting VNs is solved using both heuristic and Linear programming method. Also algorithm to simultaneously map virtual links and virtual nodes is presented. VNE problem is formulated by considering the participants: infrastructure provider (Infp) and VN provider. Mapping VNs over multiple physical substrates is performed in three steps, 1) Resource matching 2) Embedding and 3) Binding. Infp must publish its resource details to VN providers and when a VN provider receives VN request, identify suitable substrates based on the resource information exposed by every Infp. VN provider must split the VN request to match against each Infp at a high level of abstraction. Each single Infp will embed the virtual node and virtual link on the appropriate substrate node and substrate link identified in matching phase. The following section explains the three steps (matching, embedding, binding) in details.\newline
 
-Both substrate and VN request is modelled as a weighted graph G = (V, E) where 'V' is set of nodes and 'E' is set of links connecting those nodes. Substrate network is represented by a graph $G^{S} = (N^{S}, L^{S})$ where 'S' denotes substrate, VN request is represented by a graph $G^{V} = (N^{V}, L^{V})$ where 'V' represents virtual network. A substrate $G^{S}$ belonging to a particular infp is denoted by $G^{S}_{infp}$.\newline
+Both substrate and VN request is modelled as a weighted graph G = (V, E) where 'V' is set of nodes and 'E' is set of links connecting those nodes. Substrate network is represented by a graph $G^{S} = (N^{S}, L^{S})$ where 'S' denotes substrate, VN request is represented by a graph $G^{V} = (N^{V}, L^{V})$ where 'V' represents virtual network. A substrate $G^{S}$ belonging to a particular Infp is denoted by $G^{S}_{Infp}$.\newline
 
-1. Resource Matching: VN provider performs resource matching phase based on each VN request resource descriptions and infp resource descriptions. Every node whether its a virtual node or a substrate node includes details of links attached to it. So, resource matching is only performed between nodes of VN request and physical substrate. 	In this phase a set of substrate nodes $Match(n^{v})$ capable of hosting a virtual node $n^{v} \epsilon N^{V}$ is derived. For every VN request that arrives at VN provider, $Match(n^{v})$ is calculated such that $Match(n^{v}) = {n^{s}} \epsilon G^{S}_{infp}$.\newline
+1. Resource Matching: VN provider performs resource matching phase based on each VN request resource descriptions and Infp resource descriptions. Every node whether its a virtual node or a substrate node includes details of links attached to it. So, resource matching is only performed between nodes of VN request and physical substrate. 	In this phase a set of substrate nodes $Match(n^{v})$ capable of hosting a virtual node $n^{v} \epsilon N^{V}$ is derived. For every VN request that arrives at VN provider, $Match(n^{v})$ is calculated such that $Match(n^{v}) = {n^{s}} \epsilon G^{S}_{Infp}$.\newline
 
 \begin{figure}[h]
 	\centering
@@ -216,9 +216,9 @@ Both substrate and VN request is modelled as a weighted graph G = (V, E) where '
 \end{figure}
 
 
-2. VN Request splitting: For every virtual node, VN provider finds out several substrate nodes in multiple infps from the above resource matching step. Now that for each virtual node there are several infps, VN provider has to decide which virtual node should be embedded in which infp. After deciding the infp, VN provider will split the VN request to compose sub-requests that can be embedded into target infp. The main problem here for the VN provider is to find an optimal way of splitting VN request over the infps. For this optimal problem 'cost' of each infp is considered. The 'cost' refers to VN provisioning cost, that is the total cost of all the resources used to embed a VN. Each infp has its own cost for lending its resources for virtual networks. In order to solve this optimal problem, both heuristic ad exact solution based techniques are proposed. Exact based solution technique uses formulations in the form of quadratic program. Figure (fig. 5) shows an example of how VN splitting happens between two infps $infp^{\alpha}$ and $infp^{\beta}$ where i, j ,k are virtual nodes and $C_{i}^{\alpha}, C_{j}^{\alpha}$ and $C_{i}^{\beta}, C_{j}^{\beta}$ are the cost for embedding the virtual nodes i, j in the infrastructure $infp^{\alpha}$ and $infp^{\beta}$ respectively.\newline
+2. VN Request splitting: For every virtual node, VN provider finds out several substrate nodes in multiple Infps from the above resource matching step. Now that for each virtual node there are several Infps, VN provider has to decide which virtual node should be embedded in which Infp. After deciding the Infp, VN provider will split the VN request to compose sub-requests that can be embedded into target Infp. The main problem here for the VN provider is to find an optimal way of splitting VN request over the Infps. For this optimal problem 'cost' of each Infp is considered. The 'cost' refers to VN provisioning cost, that is the total cost of all the resources used to embed a VN. Each Infp has its own cost for lending its resources for virtual networks. In order to solve this optimal problem, both heuristic ad exact solution based techniques are proposed. Exact based solution technique uses formulations in the form of quadratic program. Figure (fig. 5) shows an example of how VN splitting happens between two Infps $Infp^{\alpha}$ and $Infp^{\beta}$ where i, j ,k are virtual nodes and $C_{i}^{\alpha}, C_{j}^{\alpha}$ and $C_{i}^{\beta}, C_{j}^{\beta}$ are the cost for embedding the virtual nodes i, j in the infrastructure $Infp^{\alpha}$ and $Infp^{\beta}$ respectively.\newline
 
-3. VN Embedding: From the VN splitting step, VN provider finds a optimal infp for each virtual node which should host the sub VN request designed to it. In this step, for virtual node and virtual link of the sub VN request a suitable substrate node and substrate path is selected to ensure optimal embedding. Author proposes an exact solution method to simultaneously embed virtual nodes and virtual links of a VN request in an optimal way. Figure (fig. 6) shows embedding step for split VN graphs $G'_{v}$ and $G''_{v}$.
+3. VN Embedding: From the VN splitting step, VN provider finds a optimal Infp for each virtual node which should host the sub VN request designed to it. In this step, for virtual node and virtual link of the sub VN request a suitable substrate node and substrate path is selected to ensure optimal embedding. Author proposes an exact solution method to simultaneously embed virtual nodes and virtual links of a VN request in an optimal way. Figure (fig. 6) shows embedding step for split VN graphs $G'_{v}$ and $G''_{v}$.
 
 \begin{figure}[h]
 	\centering
@@ -235,7 +235,7 @@ Inter-domain embedding algorithms require more information about the substrates 
 
 In the previous section (section \ref{CDE}) we discussed cross domain embedding approach that uses integer linear programming method for solving optimal allocation problem. Here in this section, we discuss another cross-domain embedding approach which presents information sharing scheme between the Inps as most of the Inps are reluctant to expose their topology details. We earlier understood the new roles in the network virtualization technique. Same basic roles (service provider-SP and Infps) are extended in the work \cite{6914301} by adding a broker like role called as virtual network provider (VNP) in order to make centralized embedding decisions. The information sharing scheme presented here allows VNP to have partial knowledge of underlying substrate topologies. \newline
 
-Here we introduce the main concepts presented in the work \cite{6914301} to support inter-domain embedding along with ILP formulation for optimal embedding of VN requests. Following which we discuss the results of this inter-domain embedding approach. 
+Most of the previous algorithms perform embedding set of collected VN requests i.e. offline requests. An algorithm to embed online VN requets is developed by  estimating intra-domain topologies with an augmented network. This helps in coordinating node and link mapping. Decomposing VN requests into sub-VN requests based on augmented topology and introduction of integer linear programming formulation results in embedding online VN requets in polynomial time. Here we introduce the main concepts presented in the work \cite{6914301} to support inter-domain embedding along with ILP formulation.
 
 \begin{enumerate}[label=(\Alph*)]
 \item Business Roles: 
@@ -256,25 +256,27 @@ The solution presented here prevents service providers from multiple negotiation
 A VN request comes with resource requirements and desired locations, that is in which physical substrate a particular virtual node has to be embedded. Along with these attributes, each virtual node has a restriction which represents the maximum distance from which the node can be embedded from its desired location. So the resource demand by each virtual node of a VN request is represented by a triple <required capacity, desired location, distance constraint>. An example of a simple VN request is pictured in the figure .\ref{IDE_VN} (a) where, the numbers on the links represent required bandwidth demand of the corresponding virtual link. The figure .\ref{IDE_VN} represents the information known to each role SP, VNP and Infp.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\linewidth]{IDE_VN.png}
+	\includegraphics[width=\linewidth]{inter-domain}
 	\caption{Level of Information known to each Role}
 	\label{IDE_VN}
 \end{figure}
 
 A service provider only knows what resource requirements it needs for the VN topology. The information about underlying substrate is not known to the SP. Similarly VNP only knows which Infps are participating or ready to lease their physical resources. And Infps have knowledge of their own topologies only. 
-\hspace*{1cm}Since for VNPs, physical substrate information is critical and Infps does not want to expose it, the information sharing scheme allows Inps to provide a) node location, node capacity and price b) vertices, available bandwidth and unit price of inter-domain link c) length-based price intra-domain links. From this set of information. VNP can easily allocate resource by minimizing the cost in a optimal way since it now has the knowledge of resource price and resource capacity. 
+Since for VNPs, physical substrate information is critical and Infps does not want to expose it, the information sharing scheme allows Inps to provide a) node location, node capacity and price b) vertices, available bandwidth and unit price of inter-domain link c) length-based price intra-domain links. From this set of information. VNP can easily allocate resource by minimizing the cost in a optimal way since it now has the knowledge of resource price and resource capacity. 
 
 \item 	Inter-Domain VN Embedding:
 
 With the help of business model presented (fig .\ref{IDE_VN}) and the information sharing scheme the embedding process can be carried out in the following steps:
 
-Step 1:  VN Request decomposition: After receiving VN request from the SP, VNP starts decomposing (fig .\ref{IDE_decomp}) the VN into multiple components in a best way, such that the decomposition minimizes the overall expenditure/cost. The next step is to pre-locate the virtual nodes in the substrates. For pre-locating virtual nodes, a set of candidate substrate nodes are selected who can support the resource demands of each virtual node. In the example candidate set for virtual node 'X' is \{A, B\}, 'y' is \{C, D\} and 'Z' is \{J\}.  Locating virtual nodes in this stage also affect path selection for virtual links. Therefore the cost of embedding nodes and links depends on each other. And for VNP, the substrate topology is invisible which makes path selection for virtual link difficult. To overcome this, author assumes a mesh topology for every participating substrates. An augmented network (see fig .\ref{IDE_decomp})is derived by estimating intra-domain topologies which helps VNP to coordinate node mapping and link mapping while decomposing VN request. Because of the co-existing node and link constraints, the embedding problem becomes NP-hard and hence formulation is requires for the optimal embedding. Decomposed VN request is then sent to the Infps for the actual embedding.
+Step 1:  VN Request decomposition: After receiving VN request from the SP, VNP starts decomposing (fig .\ref{IDE_decomp}) the VN into multiple components in a best way, such that the decomposition minimizes the overall expenditure/cost. The next step is to pre-locate the virtual nodes in the substrates. For pre-locating virtual nodes, a set of candidate substrate nodes are selected who can support the resource demands of each virtual node. In the example candidate set for virtual node 'X' is \{A, B\}, 'y' is \{C, D\} and 'Z' is \{J\}.  Locating virtual nodes in this stage also affect path selection for virtual links. Therefore the cost of embedding nodes and links depends on each other. And for VNP, the substrate topology is invisible which makes path selection for virtual link difficult. To overcome this, author assumes a mesh topology for every participating substrates. 
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\linewidth]{IDE_decomp.png}
+	\includegraphics[width=\linewidth]{inter-doamin_1}
 	\caption{VN Decomposition}
 	\label{IDE_decomp}
 \end{figure}
+An augmented network (see fig .\ref{IDE_decomp})is derived by estimating intra-domain topologies which helps VNP to coordinate node mapping and link mapping while decomposing VN request. Because of the co-existing node and link constraints, the embedding problem becomes NP-hard and hence formulation is requires for the optimal embedding. Decomposed VN request is then sent to the Infps for the actual embedding.
 
 Step 2: Sub-VN request processing: Each participating Infps receive their own share of decomposed VN request from the VNP. These sub-VN requests are embedded by Infps in their own domains based on their own strategies. This phase has same existing intra-domain embedding procedure. From the step 1, virtual nodes of sub-VN requests are already embedded on to the substrate nodes. So the only task for Infps is to map corresponding virtual links from the sub-VN requests. Each Infp will respond to the VNP with either success message or failure message indicating the embedding result of their portion of VN request. 
 
@@ -297,48 +299,52 @@ R(P^{A}) = \min_{l^{A}\epsilon p^{A}}B(l^{A})
 \end{equation} 
 
 When a VN request $G^{V}$ arrives at VNP, it pre-locates $G^{V}$ in the augmented network $G^{A}$ for which the VN is decomposed into multiple sub-VN requests. After that each Infp will be assigned with this sub-VN request. So the first phase of VN assignment starts with VNP mapping nodes and links onto the augmented network. Even though the substrate nodes are capable of hosting multiple virtual nodes, only one virtual node per VN request is mapped to one substrate node at a time. Hence node mapping $M_{N} : N^{V} \rightarrow N^{A}\;  \forall n^{V}, m^{V} \epsilon N^{V}$ from virtual nodes to augmented nodes is given by: \newline
+s
 \hspace*{5cm}$M_{N}(n^{V}) \epsilon \;\theta(n^{V})$
 
 \hspace*{5cm}$M_{N}(m^{V}) = M_{N}(n^{V}) \text{, iff } m^{V}=n^{V}$
 
 \hspace*{4cm}subject to 
 
-\hspace*{6cm}$C(n^{V})  \leq C(M_{N}(n^{V}))$ 
+\hspace*{6cm}$C(n^{V})  \leq C(M_{N}(n^{V}))$ \newline
 
 Similarly link mapping for every virtual link is given by: \newline 
+
 \hspace*{5cm} $M_{L} : L^{V} \rightarrow P^{A}$ such that
 
 \hspace*{5cm} $M_{L}(m^{V}, n^{V}) \subseteq P^{A}(M_{N}(m^{V}), M_{N}(n^{V}))$
 
 \hspace*{4cm} subject to
  
-\hspace*{5cm} $B(l^{V}) \leq R(P^{A})$
+\hspace*{5cm} $B(l^{V}) \leq R(P^{A})$ \newline
 
 After decomposing VN request each sub-VN request is assigned to every domain i, denoted by $G^{\overline{V}}_{i} = (N^{\overline{V}}_{i}, L^{\overline{V}}_{i})$. VNP has already decided the mapping of each node $n^{\overline{V}} \epsilon \; N^{\overline{V}}_{i}$ on to the substrate node belonging to the domain i. So, the only task for an Infp which owns the domain i is to select the substrate node $n^{S}$ for each $n^{\overline{V}}$ such that \newline
+
+
 \hspace*{5cm}$M_{\overline{N}}(n^{\overline{V}}) = n^{S}$
 
 \hspace*{4cm}subject to 
 
-\hspace*{6cm}$dom(n^{S}) = i \text{ and } g(n^{S}) = g(n^{\overline{V}})$ 
+\hspace*{6cm}$dom(n^{S}) = i \text{ and } g(n^{S}) = g(n^{\overline{V}})$  \newline
 
 The link mapping inside every Infp finds a set of substrate paths and is denoted by $M_{\overline{L}} : L_{i}^{\overline{V}} \rightarrow P^{S}$ such that
 
-\hspace*{5cm} $M_{\overline{L}}(m^{\overline{V}}, n^{\overline{V}}) \subseteq P^{S}(M_{\overline{N}}(m^{\overline{V}}), M_{\overline{N}}(n^{\overline{V}}))$
+\hspace*{5cm} $M_{\overline{L}}(m^{\overline{V}}, n^{\overline{V}}) \subseteq P^{S}(M_{\overline{N}}(m^{\overline{V}}), M_{\overline{N}}(n^{\overline{V}}))$ \newline
 
 \hspace*{4cm} subject to
 
-\hspace*{5cm} $B(l^{\overline{V}}) \leq \sum_{P^{S}\epsilon M_{\overline{L}}(l^{\overline{V}})} R(P^{S})$
+\hspace*{5cm} $B(l^{\overline{V}}) \leq \sum_{P^{S}\epsilon M_{\overline{L}}(l^{\overline{V}})} R(P^{S})$ \newline
 
 Embedding of VN request is considered success only if VNP mapping and Infp mapping are successful. Otherwise the embedding for that VN request is considered as failure.
- 
-
 \end{enumerate}
 
+We have now methods for VNP assignment and Infp assignment and these two process are the two key problems in embedding VN requests. Here we present objective for VNP and Infp in order to optimally allocate resources to each VN request. Every Infp have their own cost for leasing their resources to the sub-VN requests denoted by c(.). Hence for a sub-VN request $G^{\overline{V}}_{i}$ assigned to the Infp 'i', the cost of embedding is denoted by $C^{-}(G^{\overline{V}}_{i})$ which is the sum of the product of the amount of resource allocated and the cost for using that resource. Since VNP is charged by Inps for corresponding sub-VN requests, the final cost for embedding a VN request is equal to the total revenues of Inps for embedding all the sub-VN request of that VN. Hence the objective of the VNP assignment is to minimize the total cost of embedding while decomposing a VN request and respecting the capacity constraints. Since node mapping is done in the VNP assignment phase, each Infp tries to minimize the cost of link embedding while mapping sub-VN requests. If each virtual link is considered as a commodity flow in the augmented network $G^{A}$, then VNP assignment is considered as multi-commodity flow problem (MCF). For large number of substrate topologies, traditional techniques for solving MCF is computationally intractable, integer linear programming (ILP) is necessary to formulate embedding. ILP formulation is presented for both VNP and Infp assignment with same set of objectives for both. \newline
 
+In this work, virtual links are assumed to be unsplittable in link mapping phase. And also for node mapping best-fit and first fit heuristic methods are used. In best-fit, candidate substrates with lower costs are used and in first-fit available first substrate nodes are used. For simulation, 4 domains each with 30 nodes and 72 links are created. Virtual networks are also generated with number of nodes randomly determined by uniform distribution between 5 and 10. The probability of two nodes connected by a link is 0.4 and capacity requirements of each node is  randomly determined by uniform distribution between 0 and 20.  Comparing the proposed method with best-fit, the proposed method achieves higher acceptance ratios and lower resource utilizations simultaneously. Best-Fit algorithms follows greedy method for mapping nodes which might result in longer substrate paths to support virtual links. 
 
+In order to increase the VN acceptance ratio, author proposes 'deadline-based scheduling' where a failed request is put into queue with a time deadline instead of rejecting it. Whenever a VN is nearer to its deadline it is given a higher priority for the next embedding attempt. This scheduling method can be modified to maximize the profit by scheduling failed VN requests based on their revenue. VN requests with higher revenues are given high priority for next round of embedding. These two methods affect each other because VN requests with larger resource demands are satisfied in less time resulting in failure of requests with smaller resource demands. This in turn decreases acceptance ratio. A balance needs to be made between making more revenue and embedding more VNs. \newline
 
-
-
+\hspace*{1cm} An efficient solution for inter-domain embedding is presented in this work. A new information sharing scheme is also presented with an additional role of VN provider. By estimating the substrate topologies heuristic algorithm is proposed to embed online requests in a polynomial time. Even though ILP formulation is presented for decomposing the VN request in the VNP phase, actual node mapping inside a substrate is performed by heuristic approaches like best fit and first-fit. Estimations are made regrading the topologies of Infps and it is assumed that all the participating Infps are ready to expose partial information about their domains.  
 
 
 
@@ -556,8 +562,8 @@ In the figure \ref{fig: nw_abst} we can see each domain is abstracted into one p
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=14cm, height=5cm]{modify.jpg}
-	\caption{Fulfilling Requirements with abstraction}
+	\includegraphics[width=14cm, height=5cm]{modify}
+	\caption{Fulfilling requirements with abstraction}
 	\label{fig: modify}
 \end{figure}
 
@@ -569,7 +575,7 @@ The level of abstracting physical network is important to decide the type embedd
 As explained earlier, EdWiN formulation is modified to include the interfaces inside a domain. Switching of networks enables consumption of transformed resources for forwarding nodes. This can be realized with the help of interfaces inside the domains. Interfaces can also be used to realize resources consumption while embedding links on the pseudo nodes. This is called as internal switching. Also by introducing the concept of interfaces we can keep an account of the internal bandwidth of of physical domains. Figure \ref{fig: sw_model} compares old switching model and the proposed switching model that uses interfaces. The left side hexagon represents old switching model of a node $n_{i}$ where as right side hexagon depicts a new switching model with interfaces (p, q in the figure). 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=12cm, height=4cm]{sw_model.jpg}
+	\includegraphics[width=12cm, height=4cm]{sw_model}
 	\caption{Switching Model}
 	\label{fig: sw_model}
 \end{figure}
@@ -807,9 +813,7 @@ After receiving the partial VN request from orch. A, now its orch. B's turn to d
 	\label{fl}
 \end{figure}
 
-In the thesis work, we have used publish/subscribe model for the communication between participating operators. The figure (fig .\ref{pub_sub}) depicts an implementation example for the proposed solution. In general PRM is a concept under each orchestrator domain. But in this implementation, PRM is owned by third party broker and it is accessible by every orchestrator. An operator can access other operator's PRM via HTTP-based RESTful interface. PRM implementation follows publish-subscribe model where orchestrators can subscribe for certain categories of request. In our work, for simplicity we have assigned colours for partial VNs, hence type of the colour is considered as a category. For every partial embedding, the operator creates a partial VN request for the part of the request that failed in embedding. This partial VN request is assigned different colours. Once the partial VN request is generated, the corresponding orchestrator will publish a message in the system. All other orchestrators which have subscribed to a particular colour will receive a message in the form of notification, if a partial VN with the corresponding colour is arrived. \newline
-
-Consider a scenario as in fig .\ref{pub_sub} where three Orchestrators A,B and C are participating in the embedding process. A virtual network request arrives at orch. A with five virtual nodes and four virtual links. Orch. A runs the embedding algorithm to embed this VN request locally in its domain. The embedding solution allows only two virtual nodes to be embedded in the orch. A domain by splitting VN request into two parts. One part of VN that can be embedded locally (red coloured nodes and links) and other (Green coloured nodes  and links) that cannot. In this case orch. A publishes the partial VN request (Green coloured nodes and links) to its PRM with the category "\#GREEN". As we said earlier, PRM can be accessed by any operator, orch. B and orch. C subscribes to the PRM of orch. A for the category "\#GREEN". Since the subscription matches with the published category of VN request, both orchestrators B and C receives notification from orch. A. The notification includes basic information about the partial VN offer and contact details of the publisher. After receiving the notification both orchestrator B and C contact administrator of orch. A requesting the partial VN details. In response to this, orch. A delivers partial VN with the category "\#GREEN" \text{ to} the orchestators B and C. Also, orchestrators can aggregate all the partial VN offers and publish them at once. The receiving orchestrators can select some or all of the partial VNs based on some optimization criteria.
+In the thesis work, we have used publish/subscribe model for the communication between participating operators. The figure (fig .\ref{pub_sub}) depicts an implementation example for the proposed solution. In general PRM is a concept under each orchestrator domain. But in this implementation, PRM is owned by third party broker and it is accessible by every orchestrator. An operator can access other operator's PRM via HTTP-based RESTful interface. PRM implementation follows publish-subscribe model where orchestrators can subscribe for certain categories of request. In our work, for simplicity we have assigned colours for partial VNs, hence type of the colour is considered as a category. For every partial embedding, the operator creates a partial VN request for the part of the request that failed in embedding. This partial VN request is assigned different colours. Once the partial VN request is generated, the corresponding orchestrator will publish a message in the system. All other orchestrators which have subscribed to a particular colour will receive a message in the form of notification, if a partial VN with the corresponding colour is arrived.
 
 \begin{figure}[h]
 	\centering
@@ -817,8 +821,10 @@ Consider a scenario as in fig .\ref{pub_sub} where three Orchestrators A,B and C
 	\caption{Publish-Subscribe Model 1}
 	\label{pub_sub}
 \end{figure}
+s
+Consider a scenario as in fig .\ref{pub_sub} where three Orchestrators A,B and C are participating in the embedding process. A virtual network request arrives at orch. A with five virtual nodes and four virtual links. Orch. A runs the embedding algorithm to embed this VN request locally in its domain. The embedding solution allows only two virtual nodes to be embedded in the orch. A domain by splitting VN request into two parts. One part of VN that can be embedded locally (red coloured nodes and links) and other (Green coloured nodes  and links) that cannot. In this case orch. A publishes the partial VN request (Green coloured nodes and links) to its PRM with the category "\#GREEN". As we said earlier, PRM can be accessed by any operator, orch. B and orch. C subscribes to the PRM of orch. A for the category "\#GREEN". Since the subscription matches with the published category of VN request, both orchestrators B and C receives notification from orch. A. The notification includes basic information about the partial VN offer and contact details of the publisher. After receiving the notification both orchestrator B and C contact administrator of orch. A requesting the partial VN details. In response to this, orch. A delivers partial VN with the category "\#GREEN" \text{ to} the orchestators B and C. Also, orchestrators can aggregate all the partial VN offers and publish them at once. The receiving orchestrators can select some or all of the partial VNs based on some optimization criteria.\newline
 
-Now at the receiving end of partial VN offers,  the orchestrator's SRM wakes up the system to contact publisher of the partial VN. 
+Now at the receiving end of partial VN offers,  the orchestrator's SRM wakes up the system to contact publisher of the partial VN. After negotiating with the publisher, receiving SRM gets complete details of published partial VN offer. SRM runs algorithm to check whether it can locally support the offer in its domain.
 
 \begin{figure}[h]
 	\centering
@@ -826,8 +832,8 @@ Now at the receiving end of partial VN offers,  the orchestrator's SRM wakes up 
 	\caption{Publish-Subscribe Model 2}
 	\label{psm2}
 \end{figure}
-After negotiating with the publisher, receiving SRM gets complete details of published partial VN offer. SRM runs algorithm to check whether it can locally support the offer in its domain. Figure (fig .\ref{psm2}) below depicts receiving end of the orchestration. Here both orchestrator B and C receive notification. But only the request of orch. C is accepted by the publisher (orch. A). So orch. C sends an embedding offer saying it can embed the partial VN published by orch. A.
-If orch. A accepts the request from orch. C then the embedding procedure is continued together by orch. A and C, which results in complete embedding of that VN request. If only part of partial request is supported by orch. C then the remaining part is jointly published to PRM by orch. A and C.
+
+ Figure (fig .\ref{psm2}) below depicts receiving end of the orchestration. Here both orchestrator B and C receive notification. But only the request of orch. C is accepted by the publisher (orch. A). So orch. C sends an embedding offer saying it can embed the partial VN published by orch. A. If orch. A accepts the request from orch. C then the embedding procedure is continued together by orch. A and C, which results in complete embedding of that VN request. If only part of partial request is supported by orch. C then the remaining part is jointly published to PRM by orch. A and C.
 
 There might be more than one orchestrator that receives the same partial VN offer, in which case, all those orchestrators send embedding requests to the publisher. Multiple offers are queued up in the PRM and it depends on the publishing orchestrator to select one of the requests from the PRM (option A) based on optimization criteria. Embedding offer can be sent via PRM directly (optin B) to the requester also. By this way a VN request can be successfully embedded across multiple domains.\newline
 
@@ -961,7 +967,7 @@ In the figure (fig .\ref{sub_topo}) the rectangular boxes represent nodes and th
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=12cm, height=8cm]{sub_topo.jpg}
+	\includegraphics[width=12cm, height=7cm]{sub_topo.jpg}
 	\caption{Substrate Topology}
 	\label{sub_topo}
 \end{figure}

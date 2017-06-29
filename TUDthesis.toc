@@ -9,8 +9,8 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Co-ordinated Node and Link Mapping:}{6}
 \contentsline {subsubsection}{\numberline {2.3.2}Cross-Domain Embedding}{9}
 \contentsline {subsubsection}{\numberline {2.3.3}Efficient Inter-Domain Embedding}{11}
-\contentsline {subsubsection}{\numberline {2.3.4}Edge Wise Node Mapping (EdWiN)}{14}
+\contentsline {subsubsection}{\numberline {2.3.4}Edge Wise Node Mapping (EdWiN)}{15}
 \contentsline {subsubsection}{\numberline {2.3.5}Recursive and Hierarchical Embedding}{18}
-\contentsline {section}{\numberline {3}Approach}{24}
-\contentsline {subsection}{\numberline {3.1}Requirement I: Partial Embedding}{28}
-\contentsline {subsection}{\numberline {3.2}Requirement II: }{37}
+\contentsline {section}{\numberline {3}Approach}{25}
+\contentsline {subsection}{\numberline {3.1}Requirement I: Partial Embedding}{29}
+\contentsline {subsection}{\numberline {3.2}Requirement II: }{38}
